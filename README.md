@@ -40,13 +40,12 @@ Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS 4, Supabase JS, Char
 
 ```bash
 npm install
-cp .env.example .env.local   # ถ้าไม่มีไฟล์นี้ ให้สร้างเองตามด้านล่าง
 npm run dev
 ```
 
 เปิด http://localhost:3000
 
-ค่าที่ต้องใส่ใน `.env.local`:
+สร้างไฟล์ `.env.local` ในโฟลเดอร์หลักแล้วใส่ค่าเหล่านี้:
 
 ```env
 NEXT_PUBLIC_SUPABASE_URL=https://xxxx.supabase.co
