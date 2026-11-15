@@ -66,6 +66,7 @@ jobs:
         with:
           authkey: ${{ secrets.TS_AUTHKEY }}
           hostname: github-actions-smartpos
+          version: latest
 
       - name: Tell phone to update
         if: env.TS_AUTHKEY != '' && env.DEPLOY_TOKEN != ''
