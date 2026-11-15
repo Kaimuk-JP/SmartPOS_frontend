@@ -48,17 +48,27 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=...                # ได้จากสคร�
 
 ตัวแปรที่ขึ้นต้นด้วย `NEXT_PUBLIC_` ถูกฝังลงในไฟล์ตอน build ถ้าเปลี่ยนค่าต้อง build ใหม่
 
-## การนำขึ้นใช้งาน
+## รันจริงบนคอม
 
-มี 2 ทางที่ใช้อยู่จริง
+ตั้งค่าบนเครื่องคอมเดียวกับที่รัน backend ใส่ค่าใน `.env.local` ให้ถูกก่อน แล้ว build (ค่า `NEXT_PUBLIC_*` ถูกฝังตอน build):
 
-**Vercel** : เชื่อม repo แล้ว push เข้า `main` ก็ build ให้เอง ตั้งค่า `vercel.json` ไว้แล้ว
+```bash
+npm ci
+npm run build
+npm run start
+```
 
-**มือถือ Android (Termux)** : workflow `.github/workflows/phone-release.yml` จะ build, สร้าง release แล้วสั่งมือถือให้ดึงรุ่นใหม่ไปรันเอง ไม่ต้องใช้ Docker ต้องตั้ง secret `TS_AUTHKEY` และ `DEPLOY_TOKEN` ใน repo ส่วนวิธีตั้งเครื่องมือถือเป็นเซิร์ฟเวอร์อยู่ใน repo phone-server (ส่วนตัว)
+หน้าเว็บทำงานที่ http://localhost:3000 ให้รันค้างด้วย pm2:
 
-มี `Dockerfile` สำหรับคนที่อยากรันเป็น container ด้วย (build แบบ standalone พอร์ต 3000)
+```bash
+npm i -g pm2
+pm2 start npm --name smartpos-web -- run start
+pm2 save
+```
 
-มี workflow `supabase-keep-alive.yml` ไว้ยิงฐานข้อมูลเป็นระยะ ไม่ให้ Supabase ฟรีหลับ (ใช้เฉพาะตอนฐานข้อมูลอยู่บน Supabase)
+ถ้าให้เครื่องอื่นเข้าถึง ให้เปลี่ยน `NEXT_PUBLIC_API_URL` และ `NEXT_PUBLIC_SUPABASE_URL` จาก `localhost` เป็นที่อยู่ของเครื่องนี้ แล้ว build ใหม่ และอย่าลืมใส่ที่อยู่หน้าเว็บใน `CORS_ORIGINS` ของ backend
+
+มี `Dockerfile` สำหรับรันเป็น container (build แบบ standalone พอร์ต 3000)
 
 ## โครงสร้างโฟลเดอร์
 
