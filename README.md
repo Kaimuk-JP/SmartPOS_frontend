@@ -5,19 +5,12 @@
 
 ## ลองใช้งาน
 
-| ที่ไหน | ลิงก์ |
-| --- | --- |
-| เว็บบนมือถือของเรา (Tailscale Funnel เปิดสาธารณะ) | https://pos.bittern-komodo.ts.net |
-| เว็บบน Vercel | https://smart-pos-frontend-gamma.vercel.app |
-| API บน Render | https://smartpos-backend-7ee9.onrender.com/api |
-| เว็บฝากไฟล์ที่รันบนมือถือเครื่องเดียวกัน | https://files.bittern-komodo.ts.net |
+เว็บ: https://pos.bittern-komodo.ts.net/
 
 บัญชีทดลอง (หรือกดปุ่ม Demo Login ที่หน้าล็อกอิน):
 
 - ชื่อผู้ใช้: `smartpos`
 - รหัสผ่าน: `123456789`
-
-เว็บบน Render อาจใช้เวลาตื่นสักครู่ถ้าไม่มีคนเข้านาน ครั้งแรกที่ล็อกอินจึงอาจช้า
 
 ## ทำอะไรได้บ้าง
 
