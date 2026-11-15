@@ -25,7 +25,7 @@
 
 ## เครื่องมือที่ใช้
 
-Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS 4, Supabase JS, Chart.js, Framer Motion, react-to-print, bwip-js (สร้างบาร์โค้ด)
+Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS 4, Supabase JS (ไลบรารีเรียกฐานข้อมูล PostgreSQL), Chart.js, Framer Motion, react-to-print, bwip-js (สร้างบาร์โค้ด)
 
 ## รันในเครื่อง
 
@@ -41,7 +41,7 @@ npm run dev
 สร้างไฟล์ `.env.local` ในโฟลเดอร์หลักแล้วใส่ค่าเหล่านี้:
 
 ```env
-NEXT_PUBLIC_SUPABASE_URL=https://xxxx.supabase.co
+NEXT_PUBLIC_SUPABASE_URL=https://xxxx.supabase.co   # ที่อยู่ REST ของฐานข้อมูล PostgreSQL
 NEXT_PUBLIC_SUPABASE_ANON_KEY=...
 NEXT_PUBLIC_API_URL=http://localhost:3001/api
 ```
@@ -58,7 +58,7 @@ NEXT_PUBLIC_API_URL=http://localhost:3001/api
 
 มี `Dockerfile` สำหรับคนที่อยากรันเป็น container ด้วย (build แบบ standalone พอร์ต 3000)
 
-มี workflow `supabase-keep-alive.yml` ไว้ยิงฐานข้อมูลเป็นระยะ ไม่ให้ Supabase ฟรีหลับ
+มี workflow `supabase-keep-alive.yml` ไว้ยิงฐานข้อมูลเป็นระยะ ไม่ให้ Supabase ฟรีหลับ (ใช้เฉพาะตอนฐานข้อมูลอยู่บน Supabase)
 
 ## โครงสร้างโฟลเดอร์
 
