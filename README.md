@@ -1,85 +1,81 @@
-# 🚀 Smart POS Cloud - Frontend
+# SmartPOS Frontend
 
-ระบบจัดการจุดขาย (Point of Sale)  พัฒนาด้วย Next.js 16+ และดีไซน์ทันสมัย เพื่อการจัดการร้านค้าที่มีประสิทธิภาพสูงสุด
+หน้าเว็บของระบบขายหน้าร้าน SmartPOS ทำด้วย Next.js ใช้ได้ทั้งตอนขายของ ดูสต็อก ดูยอดขาย และให้ลูกค้าสมาชิกเข้าดูแต้มของตัวเอง
+ส่วนหลังบ้าน (API) อยู่อีก repo: [SmartPOS_backend](https://github.com/Kaimuk-JP/SmartPOS_backend)
 
-## 🌟 คุณสมบัติเด่น (Features)
+## ลองใช้งาน
 
-- **ระบบขายหน้าร้าน (POS System)**: ทำรายการขายรวดเร็ว รองรับการค้นหาสินค้าและสแกนบาร์โค้ด
-- **การจัดการสต็อก (Inventory Management)**: ติดตามจำนวนสินค้าแบบ Real-time แจ้งเตือนเมื่อสต็อกใกล้หมด
-- **ระบบสมาชิก (Customer & Rewards)**: สะสมแต้ม แลกของรางวัล และดูประวัติการซื้อของลูกค้า
-- **แดชบอร์ดสรุปผล (Admin Dashboard)**: กราฟสรุปยอดขาย กำไร และสถิติสินค้าขายดี
-- **ระบบบิลและประวัติ (Billing & History)**: ตรวจสอบย้อนหลัง พิมพ์บิลล่าสุด และจัดการรายการค้างชำระ
-- **ความปลอดภัยสูง (Security)**: ระบบล็อกอินแยก Role (Admin/Staff) พร้อมการป้องกันเส้นทางด้วย Middleware
+| ที่ไหน | ลิงก์ |
+| --- | --- |
+| เว็บบนมือถือของเรา (Tailscale Funnel เปิดสาธารณะ) | https://pos.bittern-komodo.ts.net |
+| เว็บบน Vercel | https://smart-pos-frontend-gamma.vercel.app |
+| API บน Render | https://smartpos-backend-7ee9.onrender.com/api |
+| เว็บฝากไฟล์ที่รันบนมือถือเครื่องเดียวกัน | https://files.bittern-komodo.ts.net |
 
-## 👥 กลุ่มผู้ใช้ในระบบ (User Roles)
+บัญชีทดลอง (หรือกดปุ่ม Demo Login ที่หน้าล็อกอิน):
 
-ระบบรองรับผู้ใช้งาน 2 กลุ่มหลัก เพื่อแบ่งแยกหน้าที่และความรับผิดชอบ:
+- ชื่อผู้ใช้: `smartpos`
+- รหัสผ่าน: `123456789`
 
-- **1. ผู้ดูแลระบบ (Admin)**: 
-  - เข้าถึง **แดชบอร์ดการจัดการ (Admin Dashboard)** เพื่อดูภาพรวมยอดขาย กำไร และต้นทุน
-  - จัดการข้อมูลสาขา, ตั้งค่าระบบ, และสรุปรายงานภาพรวมทั้งหมด
-  - จัดการคูปอง โปรโมชั่น และข้อมูลพื้นฐานของร้านค้า
+เว็บบน Render อาจใช้เวลาตื่นสักครู่ถ้าไม่มีคนเข้านาน ครั้งแรกที่ล็อกอินจึงอาจช้า
 
-- **2. พนักงานขาย (Staff)**:
-  - เข้าถึง **ระบบขายหน้าร้าน (POS Interface)** เพื่อทำรายการขายให้ลูกค้า
-  - จัดการสต็อกสินค้าหน้าร้าน ตรวจสอบราคาสินค้า และยอดขายประจำวัน
-  - จัดการข้อมูลลูกค้าและระบบสะสมแต้ม
+## ทำอะไรได้บ้าง
 
-- **3. ลูกค้าสมาชิก (Customer)**:
-  - เข้าถึง **ระบบสมาชิก (Member Portal)** เพื่อตรวจสอบแต้มสะสมและประวัติการซื้อ
-  - ดูข่าวสาร โปรโมชั่นปัจจุบัน และรายการของรางวัลที่สามารถแลกได้
-  - ใช้แต้มแลกของรางวัลผ่านระบบสมาชิก
+- **หน้าขาย** (`/sale`): ค้นหาสินค้า สแกนบาร์โค้ด พักบิล ใช้คูปองและแต้ม พิมพ์ใบเสร็จ และมีหน้าจอแสดงราคาให้ลูกค้าดู (`/customer-display`)
+- **สต็อกและสินค้า** (`/stock`, `/product`, `/stock-report`): เพิ่มแก้ไขสินค้า หมวดหมู่ ดูของใกล้หมด
+- **ลูกค้าและแต้ม** (`/customer`, `/points-history`, `/reward`): สมัครสมาชิก สะสมแต้ม แลกของรางวัล
+- **บิล** (`/bills`): ดูย้อนหลัง พิมพ์ซ้ำ ดูรายการค้างชำระ
+- **แอดมิน** (`/admin/...`): แดชบอร์ดยอดขายและกำไร พนักงาน คูปอง โปรโมชั่น ข่าว ของรางวัล และบันทึกการใช้งานของพนักงาน
+- **พอร์ทัลสมาชิก** (`/member`): ลูกค้าล็อกอินแยกเพื่อดูแต้ม ประวัติซื้อ และของรางวัล
 
-## 🛠 เทคโนโลยีที่ใช้ (Tech Stack)
+สิทธิ์แบ่งเป็น 3 แบบ คือ แอดมิน พนักงาน และลูกค้าสมาชิก หน้าที่ต้องล็อกอินถูกกั้นไว้ใน `middleware.ts` โดยดู cookie `access_token` และ role ในนั้น
 
-- **Framework**: [Next.js 16 (App Router)](https://nextjs.org/)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **Animations**: [Framer Motion](https://www.framer.com/motion/)
-- **Database Client**: [Supabase JS](https://supabase.com/docs/reference/javascript/introduction)
-- **Notifications**: [React Hot Toast](https://react-hot-toast.com/)
+## เครื่องมือที่ใช้
 
-## 🌐 ลิงก์ระบบ (Production Links)
+Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS 4, Supabase JS, Chart.js, Framer Motion, react-to-print, bwip-js (สร้างบาร์โค้ด)
 
-- **Frontend URL**: [https://smart-pos-frontend-gamma.vercel.app/](https://smart-pos-frontend-gamma.vercel.app/)
-- **Backend API**: [https://smartpos-backend-7ee9.onrender.com/api](https://smartpos-backend-7ee9.onrender.com/api)
+## รันในเครื่อง
 
-## ⚙️ การตั้งค่าระบบ (Environment Variables)
+ต้องมี Node 20 ขึ้นไป
 
-สร้างไฟล์ `.env.local` ในโฟลเดอร์หลัก และกำหนดค่าดังนี้:
-
-```env
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-NEXT_PUBLIC_API_URL=https://smartpos-backend-7ee9.onrender.com/api
+```bash
+npm install
+cp .env.example .env.local   # ถ้าไม่มีไฟล์นี้ ให้สร้างเองตามด้านล่าง
+npm run dev
 ```
 
-## 🚀 การรันโปรเจกต์ในเครื่อง (Local Development)
+เปิด http://localhost:3000
 
-1. ติดตั้ง Dependencies:
-   ```bash
-   npm install
-   ```
+ค่าที่ต้องใส่ใน `.env.local`:
 
-2. รันโหมด Development:
-   ```bash
-   npm run dev
-   ```
+```env
+NEXT_PUBLIC_SUPABASE_URL=https://xxxx.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=...
+NEXT_PUBLIC_API_URL=http://localhost:3001/api
+```
 
-3. เข้าใช้งานผ่านเบราว์เซอร์ที่: `http://localhost:3000`
+ตัวแปรที่ขึ้นต้นด้วย `NEXT_PUBLIC_` ถูกฝังลงในไฟล์ตอน build ถ้าเปลี่ยนค่าต้อง build ใหม่
 
-## 🔑 ข้อมูลการเข้าใช้งานทดสอบ (Test Account)
+## การนำขึ้นใช้งาน
 
-- **Username**: `smartpos`
-- **Password**: `123456789`
+มี 2 ทางที่ใช้อยู่จริง
 
-## 📁 โครงสร้างโปรเจกต์
+**Vercel** : เชื่อม repo แล้ว push เข้า `main` ก็ build ให้เอง ตั้งค่า `vercel.json` ไว้แล้ว
 
-- `/app`: หน้าเว็บไซต์หลักและระบบ Routing
-- `/components`: ส่วนประกอบ UI แบ่งตามหมวดหมู่ (POS, Dashboard, Bills)
-- `/lib/api`: ฟังก์ชันสำหรับเชื่อมต่อกับ Backend API แยกตาม Module
-- `/public`: ไฟล์ Static เช่น รูปภาพ และ Assets ต่างๆ
+**มือถือ Android (Termux)** : workflow `.github/workflows/phone-release.yml` จะ build, สร้าง release แล้วสั่งมือถือให้ดึงรุ่นใหม่ไปรันเอง ไม่ต้องใช้ Docker ต้องตั้ง secret `TS_AUTHKEY` และ `DEPLOY_TOKEN` ใน repo ส่วนวิธีตั้งเครื่องมือถือเป็นเซิร์ฟเวอร์อยู่ใน repo phone-server (ส่วนตัว)
 
----
-**Secured by Smart POS Cloud Team**
+มี `Dockerfile` สำหรับคนที่อยากรันเป็น container ด้วย (build แบบ standalone พอร์ต 3000)
+
+มี workflow `supabase-keep-alive.yml` ไว้ยิงฐานข้อมูลเป็นระยะ ไม่ให้ Supabase ฟรีหลับ
+
+## โครงสร้างโฟลเดอร์
+
+```
+app/          หน้าเว็บทั้งหมด (routing ตามชื่อโฟลเดอร์)
+components/   ส่วนประกอบของแต่ละหน้า แยกเป็น sale, stock, admin ฯลฯ
+lib/api/      ฟังก์ชันเรียก backend แยกไฟล์ตามเรื่อง (products, sales, customers ...)
+lib/          supabase client และ type กลาง
+utils/        จัดการ token และกล่องยืนยัน
+hooks/        hook เล็กๆ เช่น useDebounce
+public/       รูปและไฟล์ static
+```
