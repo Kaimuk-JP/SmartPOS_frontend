@@ -35,6 +35,7 @@ jobs:
           NEXT_PUBLIC_API_URL: /api
           NEXT_PUBLIC_SUPABASE_URL: /
           NEXT_PUBLIC_SUPABASE_ANON_KEY: __PHONE_SUPABASE_ANON_KEY__
+          NEXT_PUBLIC_HIDE_DEMO_LOGIN: 1
           NEXT_TELEMETRY_DISABLED: 1
         run: npm run build
 
