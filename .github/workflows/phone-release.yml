@@ -52,6 +52,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           TAG="phone-$(date -u +%Y%m%d-%H%M%S)-${GITHUB_SHA::7}"
+          echo "PHONE_TAG=$TAG" >> "$GITHUB_ENV"
           gh release create "$TAG" frontend.tar.gz --prerelease --target "$GITHUB_SHA" \
             --title "$TAG" --notes "Phone build of $GITHUB_SHA"
           gh release list --limit 100 --json tagName,createdAt \
@@ -69,4 +70,4 @@ jobs:
       - name: Tell phone to update
         if: env.TS_AUTHKEY != '' && env.DEPLOY_TOKEN != ''
         run: |
-          curl -fsS --retry 6 --retry-all-errors --retry-delay 5 -X POST             --resolve pos.tailb2a25e.ts.net:443:100.118.183.38             -H "Authorization: Bearer $DEPLOY_TOKEN"             https://pos.tailb2a25e.ts.net/__deploy
+          curl -fsS --retry 6 --retry-all-errors --retry-delay 5 -X POST             --resolve pos.tailb2a25e.ts.net:443:100.118.183.38             -H "Authorization: Bearer $DEPLOY_TOKEN"             "https://pos.tailb2a25e.ts.net/__deploy?app=frontend&tag=$PHONE_TAG"
