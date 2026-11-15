@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img">
+  <rect width="400" height="400" fill="#e6e8fb"/>
+  <circle cx="200" cy="205" r="178" fill="#c3c8f2" opacity="0.55"/>
+  <circle cx="200" cy="205" r="150" fill="#ffffff" opacity="0.5"/>
+  <ellipse cx="200" cy="322" rx="128" ry="13" fill="rgba(60,40,25,0.13)"/><ellipse cx="200" cy="270" rx="138" ry="40" fill="#ffffff" stroke="#4a3426" stroke-width="5"/><ellipse cx="200" cy="266" rx="110" ry="28" fill="#f3efe8"/><path d="M130 262l66-26 76 26v24l-76 28-66-28z" fill="#f3dfb8" stroke="#4a3426" stroke-width="5" stroke-linejoin="round"/><path d="M130 274l66 28 76-28" fill="none" stroke="#7b4a2a" stroke-width="9"/><path d="M130 252l66-26 76 26-76 26z" fill="#7b4a2a" stroke="#4a3426" stroke-width="5" stroke-linejoin="round"/><path d="M148 250l50-20" stroke="#3b1f12" stroke-width="3" opacity="0.5"/>
+  <g transform="translate(295.6 352)"><rect width="90.39999999999999" height="30" rx="15" fill="#ffffff" stroke="#4a3426" stroke-opacity="0.35" stroke-width="2"/><text x="45.199999999999996" y="20.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#4a3426" letter-spacing="1">SUPREME</text></g>
+</svg>

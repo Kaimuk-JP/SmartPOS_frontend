@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img">
+  <rect width="400" height="400" fill="#efe6fb"/>
+  <circle cx="200" cy="205" r="178" fill="#d9c6f3" opacity="0.55"/>
+  <circle cx="200" cy="205" r="150" fill="#ffffff" opacity="0.5"/>
+  <ellipse cx="200" cy="322" rx="128" ry="13" fill="rgba(60,40,25,0.13)"/><ellipse cx="200" cy="270" rx="138" ry="40" fill="#ffffff" stroke="#4a3426" stroke-width="5"/><ellipse cx="200" cy="266" rx="110" ry="28" fill="#f3efe8"/><rect x="118" y="212" width="164" height="110" rx="26" fill="#e2a85a" stroke="#4a3426" stroke-width="5" transform="rotate(-6 200 268)"/><g stroke="#b97a32" stroke-width="5" transform="rotate(-6 200 268)"><path d="M160 216v102"/><path d="M200 216v102"/><path d="M240 216v102"/><path d="M122 246h156"/><path d="M122 282h156"/></g><rect x="172" y="236" width="48" height="32" rx="4" fill="#f4c542" stroke="#4a3426" stroke-width="3" transform="rotate(8 196 252)"/><path d="M240 270c14 8 8 28-8 26" fill="none" stroke="#7b2d1a" stroke-width="8" stroke-linecap="round"/>
+  <g transform="translate(304.8 352)"><rect width="81.19999999999999" height="30" rx="15" fill="#ffffff" stroke="#4a3426" stroke-opacity="0.35" stroke-width="2"/><text x="40.599999999999994" y="20.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#4a3426" letter-spacing="1">FRAPPE</text></g>
+</svg>
