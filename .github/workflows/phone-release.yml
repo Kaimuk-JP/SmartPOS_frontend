@@ -71,4 +71,4 @@ jobs:
       - name: Tell phone to update
         if: env.TS_AUTHKEY != '' && env.DEPLOY_TOKEN != ''
         run: |
-          curl -fsS --retry 6 --retry-all-errors --retry-delay 5 -X POST             --resolve pos.tailb2a25e.ts.net:443:100.118.183.38             -H "Authorization: Bearer $DEPLOY_TOKEN"             "https://pos.tailb2a25e.ts.net/__deploy?app=frontend&tag=$PHONE_TAG"
+          curl -fsS --retry 6 --retry-all-errors --retry-delay 5 -X POST             --resolve pos.bittern-komodo.ts.net:443:100.118.183.38             -H "Authorization: Bearer $DEPLOY_TOKEN"             "https://pos.bittern-komodo.ts.net/__deploy?app=frontend&tag=$PHONE_TAG"
