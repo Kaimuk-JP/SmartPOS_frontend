@@ -15,8 +15,6 @@ export default function AdminLoginPage() {
     });
     const [loading, setLoading] = useState(false);
     const [demoLoading, setDemoLoading] = useState(false);
-    // ซ่อนปุ่ม Demo Login เมื่อ build ด้วย NEXT_PUBLIC_HIDE_DEMO_LOGIN=1 (เช่นเซิร์ฟเวอร์จริงที่เปลี่ยนรหัสแล้ว)
-    const showDemoLogin = process.env.NEXT_PUBLIC_HIDE_DEMO_LOGIN !== '1';
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -97,8 +95,6 @@ export default function AdminLoginPage() {
                                     value={formData.username}
                                     onChange={handleChange}
                                     placeholder="Enter username"
-                                    autoCapitalize="none"
-                                    autoCorrect="off"
                                     className="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white transition-all text-slate-900"
                                     required
                                 />
@@ -133,7 +129,6 @@ export default function AdminLoginPage() {
                         </button>
                     </form>
 
-                    {showDemoLogin && (
                     <div className="mt-4">
                         <button
                             type="button"
@@ -147,7 +142,6 @@ export default function AdminLoginPage() {
                             {demoLoading ? <Loader2 className="w-5 h-5 animate-spin" /> : <>Demo Login</>}
                         </button>
                     </div>
-                    )}
 
                     <div className="mt-8 text-center">
                         <p className="text-xs text-slate-400">
