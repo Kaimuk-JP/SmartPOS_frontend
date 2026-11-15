@@ -29,21 +29,21 @@ Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS 4, Supabase JS (ไ�
 
 ## รันในเครื่อง
 
-ต้องมี Node 20 ขึ้นไป
+ต้องมี Node 20 ขึ้นไป หน้าเว็บต้องมี API และฐานข้อมูลทำงานอยู่ก่อน ให้ตั้งฝั่ง backend ตามขั้นตอนใน [SmartPOS_backend](https://github.com/Kaimuk-JP/SmartPOS_backend#รันในเครื่อง) (สั่ง 3 ขั้น ใช้ Docker รันฐานข้อมูล) ขั้นแรกของเขาจะพิมพ์ค่าสำหรับไฟล์ `.env.local` ของที่นี่ให้
 
 ```bash
 npm install
 npm run dev
 ```
 
-เปิด http://localhost:3000
+เปิด http://localhost:3000 แล้วล็อกอินด้วย `smartpos` / `123456789` หรือกดปุ่ม Demo Login
 
-สร้างไฟล์ `.env.local` ในโฟลเดอร์หลักแล้วใส่ค่าเหล่านี้:
+ไฟล์ `.env.local` ในโฟลเดอร์หลัก:
 
 ```env
-NEXT_PUBLIC_SUPABASE_URL=https://xxxx.supabase.co   # ที่อยู่ REST ของฐานข้อมูล PostgreSQL
-NEXT_PUBLIC_SUPABASE_ANON_KEY=...
 NEXT_PUBLIC_API_URL=http://localhost:3001/api
+NEXT_PUBLIC_SUPABASE_URL=http://localhost:8000   # ที่อยู่ REST ของฐานข้อมูล PostgreSQL
+NEXT_PUBLIC_SUPABASE_ANON_KEY=...                # ได้จากสคริปต์ local/make-env.js ฝั่ง backend
 ```
 
 ตัวแปรที่ขึ้นต้นด้วย `NEXT_PUBLIC_` ถูกฝังลงในไฟล์ตอน build ถ้าเปลี่ยนค่าต้อง build ใหม่
