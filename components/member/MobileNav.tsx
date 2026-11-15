@@ -39,13 +39,13 @@ export default function MobileNav({
                         }`}
                 >
                     <item.icon className={`w-6 h-6 ${activeTab === item.id ? 'fill-current' : ''}`} />
-                    <span className="text-[10px] font-medium">{item.label}</span>
+                    <span className="text-xs font-medium">{item.label}</span>
                 </button>
             ))}
 
             <button
                 onClick={onOpenCart}
-                className="flex flex-col items-center gap-1 p-2 text-slate-400 hover:text-slate-600 relative"
+                className="flex flex-col items-center gap-1 p-2 min-w-10 min-h-10 inline-flex items-center justify-center text-slate-400 hover:text-slate-600 relative"
             >
                 <div className="relative">
                     <ShoppingBag className="w-6 h-6" />
@@ -55,7 +55,7 @@ export default function MobileNav({
                         </span>
                     )}
                 </div>
-                <span className="text-[10px] font-medium">ตะกร้า</span>
+                <span className="text-xs font-medium">ตะกร้า</span>
             </button>
         </div>
     );

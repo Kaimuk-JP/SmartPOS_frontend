@@ -23,7 +23,7 @@ export default function PurchaseDetailModal({ purchase, onClose }: PurchaseDetai
 
     return (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
-            <div className="bg-white rounded-3xl w-full max-w-md shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300 flex flex-col max-h-[90vh]">
+            <div className="bg-white rounded-2xl w-full max-w-md shadow-lg overflow-hidden animate-in zoom-in-95 duration-300 flex flex-col max-h-[90vh]">
                 {/* Header */}
                 <div className="p-6 bg-indigo-600 text-white flex justify-between items-center shrink-0">
                     <div className="flex items-center gap-3">
@@ -37,7 +37,7 @@ export default function PurchaseDetailModal({ purchase, onClose }: PurchaseDetai
                     </div>
                     <button
                         onClick={onClose}
-                        className="p-2 hover:bg-white/10 rounded-full transition-colors"
+                        className="p-2 min-w-10 min-h-10 inline-flex items-center justify-center hover:bg-white/10 rounded-full transition-colors"
                     >
                         <X className="w-6 h-6" />
                     </button>
@@ -48,14 +48,14 @@ export default function PurchaseDetailModal({ purchase, onClose }: PurchaseDetai
                     {/* Meta Info */}
                     <div className="grid grid-cols-2 gap-4">
                         <div className="space-y-1">
-                            <label className="text-[10px] font-bold text-slate-400 uppercase flex items-center gap-1">
+                            <label className="text-xs font-bold text-slate-400 uppercase flex items-center gap-1">
                                 <Calendar className="w-3 h-3" /> วันที่ทำรายการ
                             </label>
                             <p className="text-sm font-semibold text-slate-700">{formattedDate}</p>
                             <p className="text-xs text-slate-500">{formattedTime} น.</p>
                         </div>
                         <div className="space-y-1 text-right">
-                            <label className="text-[10px] font-bold text-slate-400 uppercase flex items-center gap-1 justify-end">
+                            <label className="text-xs font-bold text-slate-400 uppercase flex items-center gap-1 justify-end">
                                 <CreditCard className="w-3 h-3" /> วิธีชำระเงิน
                             </label>
                             <p className="text-sm font-semibold text-slate-700">
@@ -68,7 +68,7 @@ export default function PurchaseDetailModal({ purchase, onClose }: PurchaseDetai
 
                     {/* Items List */}
                     <div className="space-y-3">
-                        <label className="text-[10px] font-bold text-slate-400 uppercase">รายการสินค้า</label>
+                        <label className="text-xs font-bold text-slate-400 uppercase">รายการสินค้า</label>
                         <div className="space-y-2">
                             {purchase.rawItems?.map((item: any, idx: number) => (
                                 <div key={idx} className="flex justify-between items-center py-2 border-b border-slate-50 last:border-0">

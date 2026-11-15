@@ -60,11 +60,11 @@ export default function MemberLoginPage() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-purple-100 to-pink-100 py-10 flex items-center justify-center p-4 font-sans">
-            <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-2xl w-full max-w-4xl overflow-hidden flex flex-col md:flex-row min-h-[600px]">
+        <div className="min-h-screen bg-slate-50 py-10 flex items-center justify-center p-4 font-sans">
+            <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-lg w-full max-w-4xl overflow-hidden flex flex-col md:flex-row min-h-[600px]">
 
                 {/* Image Section */}
-                <div className="md:w-1/2 bg-gradient-to-br from-blue-300 to-indigo-400 p-8 flex items-center justify-center relative overflow-hidden">
+                <div className="md:w-1/2 bg-indigo-600 p-8 flex items-center justify-center relative overflow-hidden">
                     <div className="absolute inset-0 bg-pattern opacity-10"></div>
                     <div className="relative z-10 w-full max-w-sm">
                         <Image
@@ -130,9 +130,9 @@ export default function MemberLoginPage() {
                         <button
                             type="submit"
                             disabled={loading}
-                            className={`w-full py-3.5 rounded-xl font-bold text-white shadow-lg shadow-indigo-200 transition-all flex items-center justify-center gap-2 ${loading
+                            className={`w-full py-3.5 rounded-xl font-bold text-white shadow-sm transition-all flex items-center justify-center gap-2 ${loading
                                 ? 'bg-indigo-400 cursor-not-allowed'
-                                : 'bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 hover:-translate-y-1'
+                                : 'bg-indigo-600 hover:bg-indigo-700'
                                 }`}
                         >
                             {loading ? (

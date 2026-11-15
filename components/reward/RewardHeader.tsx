@@ -24,7 +24,7 @@ export default function RewardHeader({ onAddClick }: RewardHeaderProps) {
             {onAddClick && (
                 <button
                     onClick={onAddClick}
-                    className="bg-indigo-600 text-white px-5 py-2.5 rounded-xl font-medium hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 flex items-center justify-center gap-2 active:scale-95"
+                    className="bg-indigo-600 text-white px-5 py-2.5 rounded-xl font-medium hover:bg-indigo-700 transition-all shadow-sm flex items-center justify-center gap-2 active:scale-95"
                 >
                     <Plus className="w-5 h-5" />
                     เพิ่มของรางวัล

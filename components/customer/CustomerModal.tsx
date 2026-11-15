@@ -62,7 +62,7 @@ export default function CustomerModal({ show, customer, onClose, onSave, isSavin
     return (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-end">
             {/* Slide-over panel */}
-            <div className={`w-full max-w-md h-full bg-white shadow-2xl transform transition-transform duration-300 ease-in-out ${show ? 'translate-x-0' : 'translate-x-full'}`}>
+            <div className={`w-full max-w-md h-full bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${show ? 'translate-x-0' : 'translate-x-full'}`}>
                 <div className="h-full flex flex-col">
                     {/* Header */}
                     <div className="px-6 py-5 border-b border-slate-100 flex items-center justify-between bg-white">
@@ -130,7 +130,7 @@ export default function CustomerModal({ show, customer, onClose, onSave, isSavin
                             form="customer-form"
                             type="submit"
                             disabled={isSaving}
-                            className="flex-[2] py-3 px-4 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="flex-[2] py-3 px-4 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-all shadow-sm flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                             {isSaving ? (
                                 <>

@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import {
     LayoutDashboard,
     Megaphone,
@@ -53,14 +54,23 @@ export default function AdminSidebar({ isOpen = false, onClose }: AdminSidebarPr
 
             <aside className={`w-64 bg-white text-slate-600 flex flex-col h-screen fixed left-0 top-0 overflow-y-auto border-r border-slate-200 z-40 transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0`}>
                 {/* Header */}
-                <div className="h-16 flex items-center gap-3 px-6 border-b border-slate-100 bg-white sticky top-0 z-10">
-                    <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center font-bold text-white shadow-md shadow-indigo-200">A</div>
-                    <span className="font-bold text-xl text-slate-800">Smart Admin</span>
+                <div className="flex items-center gap-3 px-6 pt-6 pb-4 bg-white sticky top-0 z-10 shrink-0">
+                    <div className="w-10 h-10 relative rounded-full shrink-0">
+                        <Image
+                            src="/images/coin.gif"
+                            alt="Logo"
+                            width={40}
+                            height={40}
+                            className="rounded-full object-cover"
+                            unoptimized
+                        />
+                    </div>
+                    <span className="font-bold text-xl tracking-tight text-slate-800">Smart Admin</span>
                 </div>
 
                 {/* Navigation */}
-                <nav className="flex-1 p-4 space-y-1">
-                    <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 px-4 mt-2">เมนูหลัก</div>
+                <nav className="flex-1 px-4 pb-4 space-y-1">
+                    <div className="text-xs font-medium text-slate-500 mb-2 px-4 mt-2">เมนูหลัก</div>
                     {menuItems.map((item) => {
                         const isActive = pathname.startsWith(item.href);
                         return (
@@ -69,8 +79,8 @@ export default function AdminSidebar({ isOpen = false, onClose }: AdminSidebarPr
                                 href={item.href}
                                 onClick={handleLinkClick}
                                 className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all font-medium ${isActive
-                                    ? 'bg-indigo-50 text-indigo-600 shadow-sm'
-                                    : 'hover:bg-slate-50 text-slate-600 hover:text-slate-800'
+                                    ? 'bg-indigo-50 text-indigo-700'
+                                    : 'hover:bg-slate-100 text-slate-600 hover:text-slate-900'
                                     }`}
                             >
                                 <item.icon className={`w-5 h-5 ${isActive ? 'text-indigo-600' : 'text-slate-400'}`} />
@@ -82,7 +92,7 @@ export default function AdminSidebar({ isOpen = false, onClose }: AdminSidebarPr
 
                 {/* Reports Navigation */}
                 <div className="px-4 pb-4 space-y-1">
-                    <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 px-4 mt-4">รายงาน</div>
+                    <div className="text-xs font-medium text-slate-500 mb-2 px-4 mt-4">รายงาน</div>
                     {[
                         { href: '/admin/dashboard', icon: LayoutDashboard, label: 'แดชบอร์ดภาพรวม' },
                         { href: '/admin/bills', icon: Newspaper, label: 'รายงานบิลขาย' },
@@ -97,8 +107,8 @@ export default function AdminSidebar({ isOpen = false, onClose }: AdminSidebarPr
                                 href={item.href}
                                 onClick={handleLinkClick}
                                 className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all font-medium ${isActive
-                                    ? 'bg-indigo-50 text-indigo-600 shadow-sm'
-                                    : 'hover:bg-slate-50 text-slate-600 hover:text-slate-800'
+                                    ? 'bg-indigo-50 text-indigo-700'
+                                    : 'hover:bg-slate-100 text-slate-600 hover:text-slate-900'
                                     }`}
                             >
                                 <item.icon className={`w-5 h-5 ${isActive ? 'text-indigo-600' : 'text-slate-400'}`} />
@@ -109,11 +119,11 @@ export default function AdminSidebar({ isOpen = false, onClose }: AdminSidebarPr
                 </div>
 
                 {/* Footer Actions */}
-                <div className="p-4 border-t border-slate-100 space-y-2">
+                <div className="p-4 border-t border-slate-200 space-y-2">
                     <Link
                         href="/sale"
                         onClick={handleLinkClick}
-                        className="flex items-center gap-3 px-4 py-3 rounded-xl text-indigo-600 hover:bg-indigo-50 transition-colors w-full font-bold border-2 border-transparent hover:border-indigo-100"
+                        className="flex items-center gap-3 px-4 py-3 rounded-xl bg-indigo-600 text-white hover:bg-indigo-700 transition-colors w-full font-semibold"
                     >
                         <ShoppingCart className="w-5 h-5" />
                         เปิดหน้าขาย

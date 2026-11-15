@@ -54,10 +54,10 @@ export default function StockReportTable({
                                                     {typeof stock.category === 'object' ? (stock.category as any).name : stock.category}
                                                 </span>
                                                 {stock.remaining === 0 && (
-                                                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-red-500 text-white">หมดสต๊อก</span>
+                                                    <span className="text-xs px-2 py-0.5 rounded-full bg-red-500 text-white">หมดสต๊อก</span>
                                                 )}
                                                 {stock.remaining > 0 && stock.remaining <= 10 && (
-                                                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-500 text-white">เหลือน้อย</span>
+                                                    <span className="text-xs px-2 py-0.5 rounded-full bg-amber-500 text-white">เหลือน้อย</span>
                                                 )}
                                             </div>
                                         </div>
@@ -203,7 +203,7 @@ export default function StockReportTable({
                                     <button
                                         onClick={() => setCurrentPage(page)}
                                         className={`w-9 h-9 sm:w-10 sm:h-10 rounded-xl font-bold transition-all ${currentPage === page
-                                            ? "bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-lg shadow-indigo-200"
+                                            ? "bg-indigo-600 text-white shadow-sm"
                                             : "border border-slate-200 bg-white text-slate-600 hover:border-indigo-200 hover:bg-indigo-50"
                                             }`}
                                     >

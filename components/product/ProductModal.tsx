@@ -125,7 +125,7 @@ export default function ProductModal({ show, product, categories, onClose, onSav
 
     return (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <div className="bg-white rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-hidden shadow-2xl animate-in zoom-in-95 duration-200">
+            <div className="bg-white rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-hidden shadow-lg animate-in zoom-in-95 duration-200">
                 {/* Modal Header */}
                 <div className="flex items-center justify-between p-6 border-b border-slate-100">
                     <h3 className="text-xl font-bold text-slate-800">
@@ -133,7 +133,7 @@ export default function ProductModal({ show, product, categories, onClose, onSav
                     </h3>
                     <button
                         onClick={onClose}
-                        className="p-2 hover:bg-slate-100 rounded-xl transition-colors"
+                        className="p-2 min-w-10 min-h-10 inline-flex items-center justify-center hover:bg-slate-100 rounded-xl transition-colors"
                     >
                         <X className="w-5 h-5 text-slate-500" />
                     </button>
@@ -302,7 +302,7 @@ export default function ProductModal({ show, product, categories, onClose, onSav
                         </button>
                         <button
                             type="submit"
-                            className="px-6 py-2.5 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-700 transition-colors shadow-lg shadow-blue-200 flex items-center gap-2"
+                            className="px-6 py-2.5 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-700 transition-colors shadow-sm flex items-center gap-2"
                         >
                             <Save className="w-4 h-4" />
                             บันทึกข้อมูล

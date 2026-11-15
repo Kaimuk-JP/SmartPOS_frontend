@@ -81,6 +81,37 @@ export default function AdminLogsPage() {
         return <Tag className="w-4 h-4 text-gray-500" />;
     };
 
+    // สรุปรายละเอียดของแต่ละรายการให้อ่านง่าย และไม่แสดง "undefined" ถ้าข้อมูลบางช่องหายไป
+    const getLogDetail = (log: any): string => {
+        const d = log.details || {};
+        const has = (v: unknown) => v !== undefined && v !== null && v !== '';
+        switch (log.action) {
+            case 'CREATE_SALE':
+                return has(d.billNumber)
+                    ? `บิลเลขที่ #${d.billNumber}${has(d.total) ? ` ยอดรวม ${Number(d.total).toLocaleString()} บาท` : ''}`
+                    : 'สร้างบิลขาย';
+            case 'ADD_STOCK':
+                return `เพิ่ม ${d.addedQty ?? '-'} ชิ้น ให้กับ ${d.productName ?? 'สินค้า'}`;
+            case 'CREATE_PRODUCT':
+                return `เพิ่มสินค้า: ${d.productName ?? '-'}`;
+            case 'UPDATE_PRODUCT':
+                return `แก้ไขสินค้า ID: ${d.productId ?? '-'}`;
+            case 'DELETE_PRODUCT':
+                return `ลบสินค้า: ${d.productName ?? '-'}`;
+            case 'REDEEM_REWARD':
+                return `แลกของรางวัล: ${d.rewardTitle ?? '-'}${has(d.customerId) ? ` (ลูกค้า ID: ${d.customerId})` : ''}`;
+            case 'LOGIN':
+                return has(d.device) || has(d.ip)
+                    ? `เข้าสู่ระบบ${has(d.device) ? ` ด้วย ${d.device}` : ''}${has(d.ip) ? ` (IP ${d.ip})` : ''}`
+                    : 'เข้าสู่ระบบ';
+            default:
+                if (String(log.action).includes('CATEGORY')) {
+                    return `${getActionLabel(log.action)}: ${d.categoryName || d.categoryId || '-'}`;
+                }
+                return Object.keys(d).length ? Object.entries(d).map(([k, v]) => `${k}: ${v}`).join(', ') : '-';
+        }
+    };
+
     const getActionLabel = (action: string) => {
         const labels: Record<string, string> = {
             'CREATE_PRODUCT': 'เพิ่มสินค้าใหม่',
@@ -185,14 +216,7 @@ export default function AdminLogsPage() {
                                 {getActionLabel(log.action)}
                             </div>
                             <div className="text-sm text-gray-600 bg-gray-50 rounded-lg p-2.5">
-                                {log.action === 'CREATE_SALE' && `บิลเลขที่ #${log.details.billNumber} ยอดรวม ${log.details.total}฿`}
-                                {log.action === 'ADD_STOCK' && `เพิ่ม ${log.details.addedQty} ชิ้น ให้กับ ${log.details.productName}`}
-                                {log.action === 'CREATE_PRODUCT' && `เพิ่มสินค้า: ${log.details.productName}`}
-                                {log.action === 'UPDATE_PRODUCT' && `แก้ไขสินค้า ID: ${log.details.productId}`}
-                                {log.action === 'DELETE_PRODUCT' && `ลบสินค้า: ${log.details.productName}`}
-                                {log.action === 'REDEEM_REWARD' && `แลกของรางวัล: ${log.details.rewardTitle}`}
-                                {log.action.includes('CATEGORY') && `${getActionLabel(log.action)}: ${log.details.categoryName || log.details.categoryId}`}
-                                {!['CREATE_SALE', 'ADD_STOCK', 'CREATE_PRODUCT', 'UPDATE_PRODUCT', 'DELETE_PRODUCT', 'REDEEM_REWARD'].includes(log.action) && !log.action.includes('CATEGORY') && JSON.stringify(log.details)}
+                                {getLogDetail(log)}
                             </div>
                         </div>
                     ))
@@ -254,14 +278,7 @@ export default function AdminLogsPage() {
                                         </td>
                                         <td className="px-6 py-4 text-sm text-gray-700">
                                             <div className="line-clamp-2 max-w-md">
-                                                {log.action === 'CREATE_SALE' && `บิลเลขที่ #${log.details.billNumber} ยอดรวม ${log.details.total}฿`}
-                                                {log.action === 'ADD_STOCK' && `เพิ่ม ${log.details.addedQty} ชิ้น ให้กับ ${log.details.productName}`}
-                                                {log.action === 'CREATE_PRODUCT' && `เพิ่มสินค้า: ${log.details.productName}`}
-                                                {log.action === 'UPDATE_PRODUCT' && `แก้ไขสินค้า ID: ${log.details.productId}`}
-                                                {log.action === 'DELETE_PRODUCT' && `ลบสินค้า: ${log.details.productName}`}
-                                                {log.action === 'REDEEM_REWARD' && `แลกของรางวัล: ${log.details.rewardTitle} (ลูกค้า ID: ${log.details.customerId})`}
-                                                {log.action.includes('CATEGORY') && `${getActionLabel(log.action)}: ${log.details.categoryName || log.details.categoryId}`}
-                                                {!['CREATE_SALE', 'ADD_STOCK', 'CREATE_PRODUCT', 'UPDATE_PRODUCT', 'DELETE_PRODUCT', 'REDEEM_REWARD'].includes(log.action) && !log.action.includes('CATEGORY') && JSON.stringify(log.details)}
+                                                {getLogDetail(log)}
                                             </div>
                                         </td>
                                     </tr>

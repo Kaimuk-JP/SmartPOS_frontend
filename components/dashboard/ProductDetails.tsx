@@ -52,7 +52,7 @@ export default function ProductDetails() {
     const totalPages = Math.ceil(total / itemsPerPage);
 
     return (
-        <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl border border-white/20 p-4 sm:p-6 overflow-hidden">
+        <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-md border border-white/20 p-4 sm:p-6 overflow-hidden">
             <div className="flex flex-wrap justify-between items-center mb-6 gap-4">
                 <div>
                     <h5 className="text-lg font-bold text-gray-800 flex items-center gap-2">
@@ -88,7 +88,7 @@ export default function ProductDetails() {
                     </div>
                 ) : products.length > 0 ? (
                     products.map((item: ProductStat, index: number) => (
-                        <div key={item.id} className="bg-gray-50 rounded-xl p-4 border border-gray-100 hover:shadow-md transition-all">
+                        <div key={item.id} className="bg-gray-50 rounded-xl p-4 border border-gray-100 transition-all">
                             <div className="flex justify-between items-start mb-3">
                                 <div className="flex-1 min-w-0">
                                     <div className="flex items-center gap-2 mb-1">
@@ -197,12 +197,12 @@ export default function ProductDetails() {
                                         .map((page, idx, arr) => (
                                             <div key={page} className="flex items-center gap-1.5">
                                                 {idx > 0 && arr[idx - 1] !== page - 1 && (
-                                                    <span className="text-gray-300 font-black px-1 select-none">...</span>
+                                                    <span className="text-gray-300 font-bold px-1 select-none">...</span>
                                                 )}
                                                 <button
                                                     onClick={() => setCurrentPage(page)}
                                                     className={`w-8 h-8 sm:w-9 sm:h-9 rounded-xl font-bold transition-all duration-300 ${currentPage === page
-                                                        ? "bg-orange-500 text-white shadow-lg shadow-orange-200 ring-2 ring-orange-100 ring-offset-1 scale-110"
+                                                        ? "bg-orange-500 text-white shadow-sm ring-2 ring-orange-100 ring-offset-1 scale-110"
                                                         : "bg-white border border-gray-200 text-gray-600 hover:border-orange-200 hover:text-orange-600 hover:bg-orange-50 active:scale-95 shadow-sm"
                                                         }`}
                                                 >

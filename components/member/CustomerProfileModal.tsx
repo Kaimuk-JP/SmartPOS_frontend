@@ -74,10 +74,10 @@ export default function CustomerProfileModal({ isOpen, onClose, customer, onUpda
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
-            <div className="bg-white rounded-2xl shadow-xl w-full max-w-md overflow-hidden animate-in zoom-in-95 duration-200">
+            <div className="bg-white rounded-2xl shadow-md w-full max-w-md overflow-hidden animate-in zoom-in-95 duration-200">
                 <div className="flex items-center justify-between p-4 border-b border-slate-100">
                     <h3 className="font-bold text-lg text-slate-800">แก้ไขข้อมูลส่วนตัว</h3>
-                    <button onClick={onClose} className="p-2 hover:bg-slate-100 rounded-full text-slate-500">
+                    <button onClick={onClose} className="p-2 min-w-10 min-h-10 inline-flex items-center justify-center hover:bg-slate-100 rounded-full text-slate-500">
                         <X className="w-5 h-5" />
                     </button>
                 </div>
@@ -132,7 +132,7 @@ export default function CustomerProfileModal({ isOpen, onClose, customer, onUpda
                     </button>
                     <button
                         onClick={handleSave}
-                        className="px-6 py-2 rounded-xl bg-indigo-600 text-white font-bold hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200 flex items-center gap-2"
+                        className="px-6 py-2 rounded-xl bg-indigo-600 text-white font-bold hover:bg-indigo-700 transition-colors shadow-sm flex items-center gap-2"
                         disabled={isSaving}
                     >
                         {isSaving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}

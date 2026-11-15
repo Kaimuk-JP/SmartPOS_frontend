@@ -21,7 +21,7 @@ export default function ProductFilter({
                 <div className="flex items-center gap-3 w-full lg:w-auto">
                     <button
                         onClick={onAddProduct}
-                        className="flex-1 lg:flex-none flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-xl font-medium transition-colors shadow-sm hover:shadow-md"
+                        className="flex-1 lg:flex-none flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-xl font-medium transition-colors shadow-sm"
                     >
                         <Plus className="w-5 h-5" />
                         เพิ่มสินค้า

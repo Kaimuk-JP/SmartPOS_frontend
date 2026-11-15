@@ -31,12 +31,12 @@ export default function BulkAddModal({ show, selectedProducts, onClose, onSave }
 
     return (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <div className="bg-white rounded-2xl w-full max-w-2xl max-h-[80vh] flex flex-col shadow-2xl animate-in zoom-in-95 duration-200 overflow-hidden">
+            <div className="bg-white rounded-2xl w-full max-w-2xl max-h-[80vh] flex flex-col shadow-lg animate-in zoom-in-95 duration-200 overflow-hidden">
                 {/* Header */}
                 <div className="bg-indigo-600 p-6 flex flex-col items-center justify-center text-white relative">
                     <button
                         onClick={onClose}
-                        className="absolute top-4 right-4 p-2 bg-white/10 hover:bg-white/20 rounded-xl transition-colors"
+                        className="absolute top-4 right-4 p-2 min-w-10 min-h-10 inline-flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-xl transition-colors"
                     >
                         <X className="w-5 h-5" />
                     </button>
@@ -85,7 +85,7 @@ export default function BulkAddModal({ show, selectedProducts, onClose, onSave }
                         </button>
                         <button
                             type="submit"
-                            className="px-5 py-2.5 bg-indigo-600 text-white rounded-xl font-medium hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200 flex items-center gap-2"
+                            className="px-5 py-2.5 bg-indigo-600 text-white rounded-xl font-medium hover:bg-indigo-700 transition-colors shadow-sm flex items-center gap-2"
                         >
                             <Save className="w-4 h-4" />
                             ยืนยันการเพิ่ม

@@ -174,7 +174,7 @@ export default function CustomerTable({ customers, onEdit, onDelete, onReward, i
                                     key={pageNum}
                                     onClick={() => setCurrentPage(pageNum)}
                                     className={`w-8 h-8 flex items-center justify-center rounded-lg text-sm font-bold transition-all ${currentPage === pageNum
-                                        ? 'bg-indigo-600 text-white shadow-md shadow-indigo-200'
+                                        ? 'bg-indigo-600 text-white shadow-sm'
                                         : 'text-slate-600 hover:bg-white'
                                         }`}
                                 >

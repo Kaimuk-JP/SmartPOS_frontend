@@ -96,7 +96,7 @@ export default function AdminStaffTable({ staffs, loading, onEdit, onDelete }: A
                                     </td>
                                     <td className="px-6 py-4 text-slate-600">{staff.username}</td>
                                     <td className="px-6 py-4">
-                                        <span className="px-2.5 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold rounded-full uppercase">
+                                        <span className="px-2.5 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded-full uppercase">
                                             {staff.role}
                                         </span>
                                     </td>

@@ -1,86 +1,231 @@
 @import "tailwindcss";
 
+/*
+  SmartPOS design tokens (เขียวใบชา)
+  - สีหลัก เขียวใบชา ทับสเกล indigo เดิม เพื่อให้ทุกหน้าที่ใช้ indigo-* เปลี่ยนพร้อมกัน
+  - เทา "slate/gray" ปรับให้ออกเขียวนิดๆ และเข้มพอสำหรับอ่านบนจอขายของ
+  - ธีมสว่างอย่างเดียว (หน้าทั้งหมดเขียนสีไว้สำหรับพื้นสว่าง)
+*/
 :root {
-  /* Base - Light Mode (Zinc-like with a touch of warmth) */
-  --background: #ffffff;
-  --foreground: #09090b;
-  /* Zinc 950 */
+  color-scheme: light;
 
-  /* Surface / Cards */
+  --background: #f6f8f7;
+  --foreground: #171d1b;
+
   --card: #ffffff;
-  --card-foreground: #09090b;
+  --card-foreground: #171d1b;
   --popover: #ffffff;
-  --popover-foreground: #09090b;
+  --popover-foreground: #171d1b;
 
-  /* Primary (Indigo-600) */
-  --primary: #4f46e5;
+  --primary: #167d60;
   --primary-foreground: #ffffff;
 
-  /* Secondary (Zinc-100) */
-  --secondary: #f4f4f5;
-  --secondary-foreground: #18181b;
+  --secondary: #eef1f0;
+  --secondary-foreground: #272f2c;
 
-  /* Muted (Zinc-100) */
-  --muted: #f4f4f5;
-  --muted-foreground: #71717a;
+  --muted: #eef1f0;
+  --muted-foreground: #5b6762;
 
-  /* Accent (Zinc-100) */
-  --accent: #f4f4f5;
-  --accent-foreground: #18181b;
+  --accent: #d6f2e5;
+  --accent-foreground: #135042;
 
-  /* Destructive (Red-500) */
-  --destructive: #ef4444;
+  --destructive: #dc2626;
   --destructive-foreground: #ffffff;
 
-  /* Borders / Input */
-  --border: #e4e4e7;
-  /* Zinc 200 */
-  --input: #e4e4e7;
-  --ring: #4f46e5;
+  --border: #dfe4e2;
+  --input: #dfe4e2;
+  --ring: #167d60;
 
-  /* Radius */
-  --radius: 0.75rem;
+  --radius: 0.625rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Base - Dark Mode (Zinc-950) */
-    --background: #09090b;
-    --foreground: #fafafa;
-    /* Zinc 50 */
+@theme {
+  /* เขียวใบชา — แทน indigo */
+  --color-indigo-50: #effaf5;
+  --color-indigo-100: #d6f2e5;
+  --color-indigo-200: #b0e4cd;
+  --color-indigo-300: #7dcfb0;
+  --color-indigo-400: #47b58f;
+  --color-indigo-500: #249a76;
+  --color-indigo-600: #167d60;
+  --color-indigo-700: #136450;
+  --color-indigo-800: #135042;
+  --color-indigo-900: #124238;
+  --color-indigo-950: #08261f;
 
-    /* Surface */
-    --card: #18181b;
-    /* Zinc 900 */
-    --card-foreground: #fafafa;
-    --popover: #18181b;
-    --popover-foreground: #fafafa;
+  /* เขียวสนเข้ม — แทน purple/violet เพื่อให้การไล่สีเป็นโทนเดียวกัน */
+  --color-purple-50: #eef7f6;
+  --color-violet-50: #eef7f6;
+  --color-purple-100: #d5ecea;
+  --color-violet-100: #d5ecea;
+  --color-purple-200: #aad8d4;
+  --color-violet-200: #aad8d4;
+  --color-purple-300: #77bdb8;
+  --color-violet-300: #77bdb8;
+  --color-purple-400: #46a09b;
+  --color-violet-400: #46a09b;
+  --color-purple-500: #2a8683;
+  --color-violet-500: #2a8683;
+  --color-purple-600: #1d6e6d;
+  --color-violet-600: #1d6e6d;
+  --color-purple-700: #195857;
+  --color-violet-700: #195857;
+  --color-purple-800: #174646;
+  --color-violet-800: #174646;
+  --color-purple-900: #143a3a;
+  --color-violet-900: #143a3a;
+  --color-purple-950: #0b2424;
+  --color-violet-950: #0b2424;
 
-    /* Primary (Indigo-500) */
-    --primary: #6366f1;
-    --primary-foreground: #ffffff;
+  /* เทาออกเขียว — แทน slate และ gray */
+  --color-slate-50: #f6f8f7;
+  --color-slate-100: #eef1f0;
+  --color-slate-200: #dfe4e2;
+  --color-slate-300: #c5ccc9;
+  --color-slate-400: #7a8782;
+  --color-slate-500: #5b6762;
+  --color-slate-600: #4d5955;
+  --color-slate-700: #3b4541;
+  --color-slate-800: #272f2c;
+  --color-slate-900: #171d1b;
+  --color-slate-950: #0b0f0e;
 
-    /* Secondary (Zinc-800) */
-    --secondary: #27272a;
-    --secondary-foreground: #fafafa;
+  --color-gray-50: #f6f8f7;
+  --color-gray-100: #eef1f0;
+  --color-gray-200: #dfe4e2;
+  --color-gray-300: #c5ccc9;
+  --color-gray-400: #7a8782;
+  --color-gray-500: #5b6762;
+  --color-gray-600: #4d5955;
+  --color-gray-700: #3b4541;
+  --color-gray-800: #272f2c;
+  --color-gray-900: #171d1b;
+  --color-gray-950: #0b0f0e;
 
-    /* Muted (Zinc-800) */
-    --muted: #27272a;
-    --muted-foreground: #a1a1aa;
 
-    /* Accent (Zinc-800) */
-    --accent: #27272a;
-    --accent-foreground: #fafafa;
+  /* รวมสีตกแต่งให้เป็นโทนเดียว: ฟ้า→เขียวใบชา, ส้ม/เหลือง→อำพัน (เตือน/ส่วนลด), rose→แดง, emerald→เขียว */
+  --color-blue-50: #effaf5;
+  --color-blue-100: #d6f2e5;
+  --color-blue-200: #b0e4cd;
+  --color-blue-300: #7dcfb0;
+  --color-blue-400: #47b58f;
+  --color-blue-500: #249a76;
+  --color-blue-600: #167d60;
+  --color-blue-700: #136450;
+  --color-blue-800: #135042;
+  --color-blue-900: #124238;
+  --color-blue-950: #08261f;
+  --color-sky-50: #effaf5;
+  --color-sky-100: #d6f2e5;
+  --color-sky-200: #b0e4cd;
+  --color-sky-300: #7dcfb0;
+  --color-sky-400: #47b58f;
+  --color-sky-500: #249a76;
+  --color-sky-600: #167d60;
+  --color-sky-700: #136450;
+  --color-sky-800: #135042;
+  --color-sky-900: #124238;
+  --color-sky-950: #08261f;
+  --color-cyan-50: #effaf5;
+  --color-cyan-100: #d6f2e5;
+  --color-cyan-200: #b0e4cd;
+  --color-cyan-300: #7dcfb0;
+  --color-cyan-400: #47b58f;
+  --color-cyan-500: #249a76;
+  --color-cyan-600: #167d60;
+  --color-cyan-700: #136450;
+  --color-cyan-800: #135042;
+  --color-cyan-900: #124238;
+  --color-cyan-950: #08261f;
+  --color-teal-50: #effaf5;
+  --color-teal-100: #d6f2e5;
+  --color-teal-200: #b0e4cd;
+  --color-teal-300: #7dcfb0;
+  --color-teal-400: #47b58f;
+  --color-teal-500: #249a76;
+  --color-teal-600: #167d60;
+  --color-teal-700: #136450;
+  --color-teal-800: #135042;
+  --color-teal-900: #124238;
+  --color-teal-950: #08261f;
+  --color-pink-50: #eef7f6;
+  --color-pink-100: #d5ecea;
+  --color-pink-200: #aad8d4;
+  --color-pink-300: #77bdb8;
+  --color-pink-400: #46a09b;
+  --color-pink-500: #2a8683;
+  --color-pink-600: #1d6e6d;
+  --color-pink-700: #195857;
+  --color-pink-800: #174646;
+  --color-pink-900: #143a3a;
+  --color-pink-950: #0b2424;
+  --color-fuchsia-50: #eef7f6;
+  --color-fuchsia-100: #d5ecea;
+  --color-fuchsia-200: #aad8d4;
+  --color-fuchsia-300: #77bdb8;
+  --color-fuchsia-400: #46a09b;
+  --color-fuchsia-500: #2a8683;
+  --color-fuchsia-600: #1d6e6d;
+  --color-fuchsia-700: #195857;
+  --color-fuchsia-800: #174646;
+  --color-fuchsia-900: #143a3a;
+  --color-fuchsia-950: #0b2424;
+  --color-orange-50: #fffbeb;
+  --color-orange-100: #fef3c7;
+  --color-orange-200: #fde68a;
+  --color-orange-300: #fcd34d;
+  --color-orange-400: #fbbf24;
+  --color-orange-500: #f59e0b;
+  --color-orange-600: #d97706;
+  --color-orange-700: #b45309;
+  --color-orange-800: #92400e;
+  --color-orange-900: #78350f;
+  --color-orange-950: #451a03;
+  --color-yellow-50: #fffbeb;
+  --color-yellow-100: #fef3c7;
+  --color-yellow-200: #fde68a;
+  --color-yellow-300: #fcd34d;
+  --color-yellow-400: #fbbf24;
+  --color-yellow-500: #f59e0b;
+  --color-yellow-600: #d97706;
+  --color-yellow-700: #b45309;
+  --color-yellow-800: #92400e;
+  --color-yellow-900: #78350f;
+  --color-yellow-950: #451a03;
+  --color-rose-50: #fef2f2;
+  --color-rose-100: #fee2e2;
+  --color-rose-200: #fecaca;
+  --color-rose-300: #fca5a5;
+  --color-rose-400: #f87171;
+  --color-rose-500: #ef4444;
+  --color-rose-600: #dc2626;
+  --color-rose-700: #b91c1c;
+  --color-rose-800: #991b1b;
+  --color-rose-900: #7f1d1d;
+  --color-rose-950: #450a0a;
+  --color-emerald-50: #f0fdf4;
+  --color-emerald-100: #dcfce7;
+  --color-emerald-200: #bbf7d0;
+  --color-emerald-300: #86efac;
+  --color-emerald-400: #4ade80;
+  --color-emerald-500: #22c55e;
+  --color-emerald-600: #16a34a;
+  --color-emerald-700: #15803d;
+  --color-emerald-800: #166534;
+  --color-emerald-900: #14532d;
+  --color-emerald-950: #052e16;
 
-    /* Destructive (Red-900) */
-    --destructive: #7f1d1d;
-    --destructive-foreground: #fafafa;
+  /* มุมโค้งให้คมขึ้น ลดความ "ก้อนกลม" */
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.625rem;
+  --radius-2xl: 0.875rem;
+  --radius-3xl: 1.125rem;
 
-    /* Borders */
-    --border: #27272a;
-    --input: #27272a;
-    --ring: #6366f1;
-  }
+  /* เงาเบา โทนเขียวเข้ม แทนเงาเทากลางๆ */
+  --shadow-sm: 0 1px 2px 0 rgb(18 66 56 / 0.06);
+  --shadow: 0 1px 3px 0 rgb(18 66 56 / 0.08), 0 1px 2px -1px rgb(18 66 56 / 0.06);
+  --shadow-md: 0 4px 8px -2px rgb(18 66 56 / 0.08), 0 2px 4px -2px rgb(18 66 56 / 0.05);
+  --shadow-lg: 0 10px 20px -4px rgb(18 66 56 / 0.1), 0 4px 6px -4px rgb(18 66 56 / 0.06);
 }
 
 @theme inline {
@@ -104,11 +249,7 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-
-  --font-sans: var(--font-kanit), system-ui, sans-serif;
+  --font-sans: var(--font-plex-thai), system-ui, sans-serif;
 }
 
 body {
@@ -117,4 +258,20 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* ตัวเลขราคา/จำนวนเรียงเป็นหลักเดียวกันในตารางและใบเสร็จ */
+  font-variant-numeric: tabular-nums;
+}
+
+/* โฟกัสด้วยคีย์บอร์ดต้องมองเห็นชัด */
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

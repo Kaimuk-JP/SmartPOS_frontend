@@ -18,7 +18,7 @@ export default function AdminProductHeader({ onAddProduct }: AdminProductHeaderP
             </div>
             <button
                 onClick={onAddProduct}
-                className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 sm:px-5 py-2.5 rounded-xl font-bold flex items-center gap-2 shadow-lg shadow-indigo-100 transition-all active:scale-95 text-sm sm:text-base"
+                className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 sm:px-5 py-2.5 rounded-xl font-bold flex items-center gap-2 shadow-sm transition-all active:scale-95 text-sm sm:text-base"
             >
                 <Plus className="w-5 h-5" />
                 เพิ่มสินค้าใหม่

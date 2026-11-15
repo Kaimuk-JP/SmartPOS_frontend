@@ -121,8 +121,8 @@ export default function AdminDashboardPage() {
                     {
                         label: "ยอดขาย",
                         data: salesValues,
-                        backgroundColor: "rgba(14, 165, 233, 0.1)", // Sky-500
-                        borderColor: "rgba(14, 165, 233, 1)",
+                        backgroundColor: "rgba(22, 125, 96, 0.1)", // Sky-500
+                        borderColor: "rgba(22, 125, 96, 1)",
                         borderWidth: 2,
                         tension: 0.4,
                         fill: false,
@@ -132,8 +132,8 @@ export default function AdminDashboardPage() {
                     {
                         label: "ต้นทุน",
                         data: costValues,
-                        backgroundColor: "rgba(251, 191, 36, 0.1)", // Amber-400
-                        borderColor: "rgba(251, 191, 36, 1)",
+                        backgroundColor: "rgba(71, 181, 143, 0.1)", // Amber-400
+                        borderColor: "rgba(71, 181, 143, 1)",
                         borderWidth: 2,
                         tension: 0.4,
                         fill: false,
@@ -143,8 +143,8 @@ export default function AdminDashboardPage() {
                     {
                         label: "กำไร",
                         data: profitValues,
-                        backgroundColor: "rgba(244, 63, 94, 0.1)", // Rose-500
-                        borderColor: "rgba(244, 63, 94, 1)",
+                        backgroundColor: "rgba(123, 135, 152, 0.1)", // Rose-500
+                        borderColor: "rgba(123, 135, 152, 1)",
                         borderWidth: 2,
                         tension: 0.4,
                         fill: false,
@@ -162,9 +162,9 @@ export default function AdminDashboardPage() {
 
     // Admin Stats Cards
     const adminStatItems = [
-        { label: 'สมาชิกทั้งหมด', value: adminStats?.customerCount.toLocaleString() || '0', sub: 'คน', icon: Users, color: 'bg-blue-500' },
-        { label: 'คูปองทั้งหมด', value: adminStats?.couponCount?.toLocaleString() || '0', sub: 'ใบ', icon: Ticket, color: 'bg-amber-500' },
-        { label: 'โปรโมชั่น Active', value: adminStats?.promoCount.toLocaleString() || '0', sub: 'รายการ', icon: Megaphone, color: 'bg-emerald-500' },
+        { label: 'สมาชิกทั้งหมด', value: adminStats?.customerCount.toLocaleString() || '0', sub: 'คน', icon: Users, color: 'bg-indigo-600' },
+        { label: 'คูปองทั้งหมด', value: adminStats?.couponCount?.toLocaleString() || '0', sub: 'ใบ', icon: Ticket, color: 'bg-indigo-600' },
+        { label: 'โปรโมชั่น Active', value: adminStats?.promoCount.toLocaleString() || '0', sub: 'รายการ', icon: Megaphone, color: 'bg-indigo-600' },
     ];
 
     return (
@@ -182,7 +182,7 @@ export default function AdminDashboardPage() {
             {/* Admin Overview Stats */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {adminStatItems.map((stat, i) => (
-                    <div key={i} className="bg-white p-4 sm:p-5 rounded-2xl border border-slate-100 shadow-sm flex items-start justify-between hover:shadow-md transition-all hover:-translate-y-1">
+                    <div key={i} className="bg-white p-4 sm:p-5 rounded-2xl border border-slate-100 shadow-sm flex items-start justify-between transition-all">
                         <div>
                             <div className="text-slate-500 text-sm font-medium mb-1">{stat.label}</div>
                             <div className="text-xl sm:text-2xl font-bold text-slate-800 mb-1">{stat.value}</div>

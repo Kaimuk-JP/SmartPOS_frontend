@@ -33,7 +33,7 @@ export default function CouponDetailModal({ coupon, onClose }: CouponDetailModal
 
     return (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
-            <div className="bg-white rounded-3xl w-full max-w-sm shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300">
+            <div className="bg-white rounded-2xl w-full max-w-sm shadow-lg overflow-hidden animate-in zoom-in-95 duration-300">
                 {/* Header */}
                 <div className="p-6 pb-0 flex justify-between items-start">
                     <div className="bg-indigo-100 text-indigo-600 p-2.5 rounded-2xl">
@@ -41,7 +41,7 @@ export default function CouponDetailModal({ coupon, onClose }: CouponDetailModal
                     </div>
                     <button
                         onClick={onClose}
-                        className="p-2 hover:bg-slate-100 rounded-full text-slate-400 transition-colors"
+                        className="p-2 min-w-10 min-h-10 inline-flex items-center justify-center hover:bg-slate-100 rounded-full text-slate-400 transition-colors"
                     >
                         <X className="w-6 h-6" />
                     </button>
@@ -53,14 +53,14 @@ export default function CouponDetailModal({ coupon, onClose }: CouponDetailModal
                     <p className="text-slate-500 text-sm mb-6">{coupon.description}</p>
 
                     {/* Barcode Area */}
-                    <div className="bg-slate-50 border-2 border-dashed border-slate-200 rounded-3xl p-6 mb-6 flex flex-col items-center justify-center">
+                    <div className="bg-slate-50 border-2 border-dashed border-slate-200 rounded-2xl p-6 mb-6 flex flex-col items-center justify-center">
                         <div className="bg-white p-4 rounded-2xl shadow-sm mb-4 w-full flex justify-center overflow-hidden">
                             <canvas ref={canvasRef} className="max-w-full h-auto"></canvas>
                         </div>
                         <div className="font-mono font-bold text-lg text-indigo-600 tracking-widest uppercase">
                             {coupon.code}
                         </div>
-                        <p className="text-[10px] text-slate-400 mt-2">แสดงบาร์โค้ดนี้ให้พนักงานเพื่อรับสิทธิ์</p>
+                        <p className="text-xs text-slate-400 mt-2">แสดงบาร์โค้ดนี้ให้พนักงานเพื่อรับสิทธิ์</p>
                     </div>
 
                     {/* Meta */}

@@ -33,7 +33,7 @@ export default function BillHistoryModal({
 
     return (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <div className="bg-white rounded-2xl w-full max-w-2xl overflow-hidden shadow-2xl animate-in zoom-in-95 duration-200 flex flex-col max-h-[85vh]">
+            <div className="bg-white rounded-2xl w-full max-w-2xl overflow-hidden shadow-lg animate-in zoom-in-95 duration-200 flex flex-col max-h-[85vh]">
 
                 {/* Header */}
                 <div className="p-4 border-b border-slate-100 flex justify-between items-center bg-slate-50">
@@ -88,7 +88,7 @@ export default function BillHistoryModal({
                                             <span className="font-bold text-indigo-700">
                                                 {bill.billNumber || `ID: #${bill.id}`}
                                             </span>
-                                            <span className="text-[11px] text-slate-400">
+                                            <span className="text-xs text-slate-400">
                                                 {(() => {
                                                     const date = bill.createdAt instanceof Date ? bill.createdAt : new Date(bill.createdAt);
                                                     return isNaN(date.getTime()) ? 'N/A' : date.toLocaleTimeString("th-TH", { hour: '2-digit', minute: '2-digit' });

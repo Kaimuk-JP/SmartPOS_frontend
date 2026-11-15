@@ -108,7 +108,7 @@ export default function CategoryPage() {
                 </div>
                 <button
                     onClick={() => handleOpenModal()}
-                    className="bg-indigo-600 text-white px-6 py-2.5 rounded-xl hover:bg-indigo-700 flex items-center gap-2 font-medium shadow-md shadow-indigo-100 transition-all active:scale-95"
+                    className="bg-indigo-600 text-white px-6 py-2.5 rounded-xl hover:bg-indigo-700 flex items-center gap-2 font-medium shadow-sm transition-all active:scale-95"
                 >
                     <Plus className="w-5 h-5" />
                     เพิ่มหมวดหมู่
@@ -224,7 +224,7 @@ export default function CategoryPage() {
             {/* Modal */}
             {isModalOpen && (
                 <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-                    <div className="bg-white rounded-2xl w-full max-w-md p-6 shadow-2xl animate-in zoom-in-95 duration-200">
+                    <div className="bg-white rounded-2xl w-full max-w-md p-6 shadow-lg animate-in zoom-in-95 duration-200">
                         <div className="flex justify-between items-center mb-4">
                             <h3 className="text-xl font-bold text-slate-800">{editingCategory ? "แก้ไขหมวดหมู่" : "เพิ่มหมวดหมู่ใหม่"}</h3>
                         </div>
@@ -260,7 +260,7 @@ export default function CategoryPage() {
                                 </button>
                                 <button
                                     type="submit"
-                                    className="flex-1 py-3 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-100"
+                                    className="flex-1 py-3 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-colors shadow-sm"
                                 >
                                     {editingCategory ? "อัปเดต" : "เพิ่มหมวดหมู่"}
                                 </button>

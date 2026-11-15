@@ -28,7 +28,7 @@ export default function CartDrawer({ isOpen, onClose, cartItems, onUpdateQuantit
             ></div>
 
             {/* Drawer */}
-            <div className={`fixed top-0 right-0 h-full w-full max-w-md bg-white z-50 shadow-2xl transform transition-transform duration-300 flex flex-col ${isOpen ? 'translate-x-0' : 'translate-x-full'
+            <div className={`fixed top-0 right-0 h-full w-full max-w-md bg-white z-50 shadow-lg transform transition-transform duration-300 flex flex-col ${isOpen ? 'translate-x-0' : 'translate-x-full'
                 }`}>
                 {/* Header */}
                 <div className="p-4 border-b flex items-center justify-between bg-slate-50">
@@ -36,7 +36,7 @@ export default function CartDrawer({ isOpen, onClose, cartItems, onUpdateQuantit
                         <ShoppingBag className="w-5 h-5 text-indigo-600" />
                         ตะกร้าของฉัน ({cartItems.reduce((a, b) => a + b.quantity, 0)})
                     </h2>
-                    <button onClick={onClose} className="p-2 hover:bg-slate-200 rounded-full transition-colors">
+                    <button onClick={onClose} className="p-2 min-w-10 min-h-10 inline-flex items-center justify-center hover:bg-slate-200 rounded-full transition-colors">
                         <X className="w-5 h-5 text-slate-500" />
                     </button>
                 </div>
@@ -104,7 +104,7 @@ export default function CartDrawer({ isOpen, onClose, cartItems, onUpdateQuantit
                     <button
                         disabled={cartItems.length === 0}
                         className={`w-full py-3.5 rounded-xl font-bold text-white shadow-lg transition-all flex items-center justify-center gap-2 ${cartItems.length > 0
-                            ? 'bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 hover:-translate-y-1 shadow-indigo-200'
+                            ? 'bg-indigo-600 hover:bg-indigo-700 shadow-indigo-600/20'
                             : 'bg-slate-300 cursor-not-allowed'
                             }`}
                         onClick={() => {

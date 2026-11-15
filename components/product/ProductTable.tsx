@@ -53,7 +53,7 @@ export default function ProductTable({
                                 <tr key={product.id} className="hover:bg-slate-50/50 transition-colors">
                                     <td className="py-3 px-4 text-center">
                                         <div className="flex flex-col items-center gap-2">
-                                            <span className="text-[10px] text-slate-400 font-mono">
+                                            <span className="text-xs text-slate-400 font-mono">
                                                 {(currentPage - 1) * itemsPerPage + index + 1}
                                             </span>
                                             <div className="relative w-12 h-12 rounded-lg bg-slate-100 overflow-hidden border border-slate-200">
@@ -169,13 +169,13 @@ export default function ProductTable({
                                         .map((page, idx, arr) => (
                                             <div key={page} className="flex items-center gap-1.5">
                                                 {idx > 0 && arr[idx - 1] !== page - 1 && (
-                                                    <span className="text-slate-300 font-black px-1 select-none">...</span>
+                                                    <span className="text-slate-300 font-bold px-1 select-none">...</span>
                                                 )}
                                                 <button
                                                     onClick={() => setCurrentPage(page)}
                                                     className={`w-10 h-10 rounded-xl font-bold transition-all duration-300 ${currentPage === page
-                                                        ? "bg-orange-500 text-white shadow-lg shadow-orange-200 ring-2 ring-orange-100 ring-offset-2 scale-110"
-                                                        : "bg-white border border-slate-200 text-slate-600 hover:border-orange-200 hover:text-orange-600 hover:shadow-md hover:bg-orange-50 active:scale-95"
+                                                        ? "bg-orange-500 text-white shadow-sm ring-2 ring-orange-100 ring-offset-2 scale-110"
+                                                        : "bg-white border border-slate-200 text-slate-600 hover:border-orange-200 hover:text-orange-600 hover:bg-orange-50 active:scale-95"
                                                         }`}
                                                 >
                                                     {page}

@@ -285,7 +285,7 @@ export default function PromotionsPage() {
                 </div>
                 <button
                     onClick={handleOpenCreate}
-                    className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2.5 rounded-xl font-bold flex items-center gap-2 shadow-lg shadow-indigo-200 transition-all active:scale-95 text-sm sm:text-base"
+                    className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2.5 rounded-xl font-bold flex items-center gap-2 shadow-sm transition-all active:scale-95 text-sm sm:text-base"
                 >
                     <Plus className="w-5 h-5" />
                     สร้างโปรโมชั่นใหม่
@@ -335,7 +335,7 @@ export default function PromotionsPage() {
                                 <div className="flex-1 min-w-0">
                                     <div className="flex items-center gap-2">
                                         <h3 className="font-bold text-slate-800 text-lg">{promo.title}</h3>
-                                        <span className={`px-2 py-0.5 rounded-full text-[10px] uppercase font-bold ${status === 'ใช้งานอยู่' ? 'bg-green-100 text-green-700' :
+                                        <span className={`px-2 py-0.5 rounded-full text-xs uppercase font-bold ${status === 'ใช้งานอยู่' ? 'bg-green-100 text-green-700' :
                                             status === 'กำลังจะเริ่ม' ? 'bg-blue-100 text-blue-700' :
                                                 status === 'หมดอายุ' ? 'bg-red-100 text-red-700' :
                                                     'bg-slate-100 text-slate-600'
@@ -400,12 +400,12 @@ export default function PromotionsPage() {
                                 .map((page, idx, arr) => (
                                     <div key={page} className="flex items-center gap-1.5">
                                         {idx > 0 && arr[idx - 1] !== page - 1 && (
-                                            <span className="text-slate-300 font-black px-1 select-none">...</span>
+                                            <span className="text-slate-300 font-bold px-1 select-none">...</span>
                                         )}
                                         <button
                                             onClick={() => setCurrentPage(page)}
                                             className={`w-9 h-9 rounded-xl font-bold transition-all duration-300 ${currentPage === page
-                                                ? "bg-indigo-600 text-white shadow-lg shadow-indigo-200 ring-4 ring-indigo-50"
+                                                ? "bg-indigo-600 text-white shadow-sm ring-4 ring-indigo-50"
                                                 : "bg-white border border-slate-200 text-slate-600 hover:border-indigo-200 hover:text-indigo-600 hover:bg-indigo-50 shadow-sm active:scale-95"
                                                 }`}
                                         >
@@ -429,7 +429,7 @@ export default function PromotionsPage() {
             {/* Create/Edit Modal */}
             {isModalOpen && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-200">
-                    <div className="bg-white rounded-3xl w-full max-w-4xl max-h-[90vh] shadow-2xl overflow-hidden flex flex-col animate-in zoom-in-95 duration-200">
+                    <div className="bg-white rounded-2xl w-full max-w-4xl max-h-[90vh] shadow-lg overflow-hidden flex flex-col animate-in zoom-in-95 duration-200">
                         {/* Modal Header */}
                         <div className="p-6 border-b border-slate-100 flex justify-between items-center bg-white sticky top-0 z-10">
                             <div className="flex items-center gap-3">
@@ -576,7 +576,7 @@ export default function PromotionsPage() {
                                 </div>
 
                                 {/* Right Side: Product Selection */}
-                                <div className="space-y-6 flex flex-col h-full bg-slate-50 p-6 rounded-3xl border border-slate-100">
+                                <div className="space-y-6 flex flex-col h-full bg-slate-50 p-6 rounded-2xl border border-slate-100">
                                     <div className="flex justify-between items-center">
                                         <h4 className="text-sm font-extrabold text-slate-800 uppercase tracking-wider">เลือกสินค้าที่ร่วมรายการ</h4>
                                         <span className="text-xs font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded-lg">
@@ -609,7 +609,7 @@ export default function PromotionsPage() {
                                                         key={product.id}
                                                         onClick={() => toggleProductSelection(product.id)}
                                                         className={`flex items-center gap-3 p-3 rounded-2xl cursor-pointer transition-all border ${isSelected
-                                                            ? 'bg-indigo-600 border-indigo-600 shadow-md shadow-indigo-100'
+                                                            ? 'bg-indigo-600 border-indigo-600 shadow-sm'
                                                             : 'bg-white border-slate-100 hover:border-slate-300'
                                                             }`}
                                                     >
@@ -624,7 +624,7 @@ export default function PromotionsPage() {
                                                             <div className={`text-sm font-bold truncate ${isSelected ? 'text-white' : 'text-slate-700'}`}>
                                                                 {product.name}
                                                             </div>
-                                                            <div className={`text-[10px] ${isSelected ? 'text-indigo-100' : 'text-slate-400'}`}>
+                                                            <div className={`text-xs ${isSelected ? 'text-indigo-100' : 'text-slate-400'}`}>
                                                                 SKU: {product.barcode || 'N/A'} • ฿{product.price}
                                                             </div>
                                                         </div>
@@ -676,7 +676,7 @@ export default function PromotionsPage() {
                                 form="promo-form"
                                 type="submit"
                                 disabled={saving}
-                                className="flex-[2] py-4 bg-indigo-600 text-white font-extrabold rounded-2xl shadow-xl shadow-indigo-200 hover:bg-indigo-700 transition-all active:scale-[0.98] disabled:opacity-50 flex items-center justify-center gap-3"
+                                className="flex-[2] py-4 bg-indigo-600 text-white font-extrabold rounded-2xl shadow-sm hover:bg-indigo-700 transition-all active:scale-[0.98] disabled:opacity-50 flex items-center justify-center gap-3"
                             >
                                 {saving ? (
                                     <>

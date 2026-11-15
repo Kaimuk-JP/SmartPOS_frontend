@@ -39,7 +39,7 @@ export default function MemberProfileCard({ customer, onEditProfile }: MemberPro
     }
 
     return (
-        <div className={`rounded-3xl p-6 sm:p-8 text-white shadow-xl bg-gradient-to-r ${currentTier.color} relative overflow-hidden transition-all duration-500 hover:shadow-2xl group`}>
+        <div className={`rounded-2xl p-6 sm:p-8 text-white shadow-md bg-gradient-to-r ${currentTier.color} relative overflow-hidden transition-all duration-500 group`}>
             {/* Background Decor */}
             <div className="absolute top-0 right-0 p-12 opacity-10">
                 <Star className="w-64 h-64 transform rotate-12 translate-x-16 -translate-y-16" />
@@ -69,7 +69,7 @@ export default function MemberProfileCard({ customer, onEditProfile }: MemberPro
                             <h1 className="text-2xl sm:text-3xl font-bold truncate max-w-[250px]">{customer.name}</h1>
                             <button
                                 onClick={onEditProfile}
-                                className="p-1.5 rounded-full bg-white/10 hover:bg-white/20 transition-colors opacity-80 hover:opacity-100"
+                                className="p-2 min-w-10 min-h-10 inline-flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors opacity-80 hover:opacity-100"
                                 title="แก้ไขชื่อ"
                             >
                                 <Edit2 className="w-4 h-4" />

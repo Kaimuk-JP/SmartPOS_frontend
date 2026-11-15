@@ -158,7 +158,7 @@ export default function PromotionBanner({ shopId }: PromotionBannerProps) {
                 {displayedPromotions.map((promo) => (
                     <div
                         key={promo.id}
-                        className="min-w-[280px] md:min-w-[320px] snap-center bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all cursor-pointer group border border-slate-100"
+                        className="min-w-[280px] md:min-w-[320px] snap-center bg-white rounded-2xl overflow-hidden shadow-md transition-all cursor-pointer group border border-slate-100"
                     >
                         <div className="relative h-40 overflow-hidden">
                             {/* eslint-disable-next-line @next/next/no-img-element */}

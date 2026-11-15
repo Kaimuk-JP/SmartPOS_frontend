@@ -97,7 +97,7 @@ export default function MemberHistory({
                             key={page}
                             onClick={() => setPage(page as number)}
                             className={`w-8 h-8 flex items-center justify-center rounded-lg font-bold text-sm transition-all ${currentPage === page
-                                    ? 'bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-md shadow-indigo-200'
+                                    ? 'bg-indigo-600 text-white shadow-sm'
                                     : 'border border-slate-200 bg-white text-slate-600 hover:border-indigo-200 hover:bg-indigo-50'
                                 }`}
                         >

@@ -134,7 +134,7 @@ export default function ProductCatalog({ onAddToCart, shopId }: ProductCatalogPr
                             key={cat.id ?? 'all'}
                             onClick={() => setSelectedCategoryId(cat.id)}
                             className={`px-5 py-2 rounded-xl text-sm font-bold whitespace-nowrap transition-all ${selectedCategoryId === cat.id
-                                ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-200 scale-105'
+                                ? 'bg-indigo-600 text-white shadow-sm scale-105'
                                 : 'bg-slate-50 text-slate-600 border border-slate-200 hover:bg-slate-100'
                                 }`}
                         >
@@ -155,7 +155,7 @@ export default function ProductCatalog({ onAddToCart, shopId }: ProductCatalogPr
 
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                     {products.map(product => (
-                        <div key={product.id} className="bg-white rounded-xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-md transition-all group">
+                        <div key={product.id} className="bg-white rounded-xl overflow-hidden border border-slate-100 shadow-sm transition-all group">
                             <div className="aspect-square relative overflow-hidden bg-slate-100">
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
@@ -178,7 +178,7 @@ export default function ProductCatalog({ onAddToCart, shopId }: ProductCatalogPr
                                 <h4 className="font-bold text-slate-800 text-sm line-clamp-1">{product.name}</h4>
                                 <div className="flex items-end justify-between mt-2">
                                     <div className="font-bold text-indigo-600">฿{product.price}</div>
-                                    <div className="text-[10px] text-slate-400">/{product.unit || 'ชิ้น'}</div>
+                                    <div className="text-xs text-slate-400">/{product.unit || 'ชิ้น'}</div>
                                 </div>
                             </div>
                         </div>
@@ -218,7 +218,7 @@ export default function ProductCatalog({ onAddToCart, shopId }: ProductCatalogPr
                                     onClick={() => handlePageChange(page as number)}
                                     disabled={isLoading}
                                     className={`w-9 h-9 flex items-center justify-center rounded-xl font-bold text-sm transition-all ${currentPage === page
-                                        ? 'bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-lg shadow-indigo-200'
+                                        ? 'bg-indigo-600 text-white shadow-sm'
                                         : 'border border-slate-200 bg-white text-slate-600 hover:border-indigo-200 hover:bg-indigo-50'
                                         }`}
                                 >

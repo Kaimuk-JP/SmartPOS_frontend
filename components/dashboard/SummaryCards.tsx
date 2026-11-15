@@ -16,8 +16,8 @@ export default function SummaryCards({ data }: SummaryCardsProps) {
                 สรุปยอดขายรวม
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl border border-white/20 overflow-hidden transform hover:-translate-y-1 transition-transform">
-                    <div className="p-4 bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white font-medium flex items-center gap-2">
+                <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-md border border-white/20 overflow-hidden transform transition-transform">
+                    <div className="p-4 bg-indigo-600 text-white font-medium flex items-center gap-2">
                         <TrendingUp className="w-5 h-5" />
                         ยอดขายทั้งหมด
                     </div>
@@ -26,8 +26,8 @@ export default function SummaryCards({ data }: SummaryCardsProps) {
                     </div>
                 </div>
 
-                <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl border border-white/20 overflow-hidden transform hover:-translate-y-1 transition-transform">
-                    <div className="p-4 bg-gradient-to-r from-[#ffa726] to-[#ff7043] text-white font-medium flex items-center gap-2">
+                <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-md border border-white/20 overflow-hidden transform transition-transform">
+                    <div className="p-4 bg-indigo-700 text-white font-medium flex items-center gap-2">
                         <Coins className="w-5 h-5" />
                         ต้นทุนรวม
                     </div>
@@ -36,8 +36,8 @@ export default function SummaryCards({ data }: SummaryCardsProps) {
                     </div>
                 </div>
 
-                <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl border border-white/20 overflow-hidden transform hover:-translate-y-1 transition-transform">
-                    <div className="p-4 bg-gradient-to-r from-[#66bb6a] to-[#43a047] text-white font-medium flex items-center gap-2">
+                <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-md border border-white/20 overflow-hidden transform transition-transform">
+                    <div className="p-4 bg-indigo-700 text-white font-medium flex items-center gap-2">
                         <Trophy className="w-5 h-5" />
                         กำไรสุทธิ
                     </div>

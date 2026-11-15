@@ -35,7 +35,7 @@ export default function DashboardHeader({ dailyViewMode, setDailyViewMode }: Das
     return (
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white/50 backdrop-blur-md p-6 rounded-2xl border border-white/40 shadow-sm">
             <div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Dashboard</h1>
+                <h1 className="text-2xl font-bold bg-indigo-600 bg-clip-text text-transparent">Dashboard</h1>
                 <p className="text-slate-500 mt-1 flex items-center gap-2 text-sm">
                     <span>อัปเดตล่าสุด:</span>
                     <span>

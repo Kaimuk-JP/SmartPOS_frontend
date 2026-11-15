@@ -199,7 +199,7 @@ export default function StockPage() {
     const selectedProductsForModal = allProducts.filter(p => selectedIds.includes(p.id));
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-100 via-slate-50 to-indigo-50 p-4 md:p-6">
+        <div className="min-h-screen bg-slate-50 p-4 md:p-6">
             <div className="max-w-7xl mx-auto space-y-6">
                 <StockHeader />
 
@@ -210,7 +210,7 @@ export default function StockPage() {
                 />
 
                 {activeTab !== 'history' && selectedIds.length > 0 && (
-                    <div className="bg-indigo-600 text-white p-3 rounded-xl flex items-center justify-between shadow-lg shadow-indigo-200 animate-in slide-in-from-top-2">
+                    <div className="bg-indigo-600 text-white p-3 rounded-xl flex items-center justify-between shadow-sm animate-in slide-in-from-top-2">
                         <div className="flex items-center gap-2 px-2">
                             <span className="font-bold">{selectedIds.length}</span> รายการที่เลือก
                         </div>

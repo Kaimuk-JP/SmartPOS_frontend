@@ -55,7 +55,7 @@ export default function RegisterPage() {
             <div className="hidden md:flex flex-col justify-center items-center bg-slate-900 text-white p-10 relative overflow-hidden">
                 <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-20"></div>
                 <div className="relative z-10 text-center max-w-md">
-                    <div className="w-20 h-20 bg-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl shadow-indigo-500/30">
+                    <div className="w-20 h-20 bg-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm">
                         <Store className="w-10 h-10 text-white" />
                     </div>
                     <h2 className="text-4xl font-bold mb-4">เข้าร่วมกับเรา</h2>
@@ -65,7 +65,7 @@ export default function RegisterPage() {
 
             {/* Right Side - Form */}
             <div className="flex items-center justify-center p-8 bg-slate-50">
-                <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-xl shadow-slate-200">
+                <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-sm">
                     <div className="text-center mb-8">
                         <h1 className="text-2xl font-bold text-slate-800">ลงทะเบียนร้านค้า</h1>
                         <p className="text-slate-500 mt-2">สร้างบัญชีผู้ใช้งานใหม่</p>
@@ -138,7 +138,7 @@ export default function RegisterPage() {
                         <button
                             type="submit"
                             disabled={loading}
-                            className={`w-full py-3 rounded-xl bg-indigo-600 text-white font-medium hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200 flex items-center justify-center gap-2 ${loading ? 'opacity-70 cursor-not-allowed' : ''}`}
+                            className={`w-full py-3 rounded-xl bg-indigo-600 text-white font-medium hover:bg-indigo-700 transition-colors shadow-sm flex items-center justify-center gap-2 ${loading ? 'opacity-70 cursor-not-allowed' : ''}`}
                         >
                             {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : <>ลงทะเบียน <ArrowRight className="w-5 h-5" /></>}
                         </button>

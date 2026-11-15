@@ -7,7 +7,7 @@ import animationData from "../public/Logo-new.json";
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex flex-col items-center justify-center p-4 font-sans">
+    <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center p-4 font-sans">
 
       <div className="flex flex-col items-center mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700">
         <div className="w-48 h-48 relative mb-6">
@@ -27,7 +27,7 @@ export default function LandingPage() {
         {/* Shop Owner / Admin Card */}
         <Link
           href="/login"
-          className="group relative bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-slate-100 flex flex-col items-center text-center hover:-translate-y-1"
+          className="group relative bg-white p-8 rounded-2xl shadow-md transition-all duration-300 border border-slate-100 flex flex-col items-center text-center"
         >
           <div className="w-20 h-20 bg-indigo-50 rounded-2xl flex items-center justify-center mb-6 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300 shadow-sm">
             <Store className="w-10 h-10" />
@@ -46,7 +46,7 @@ export default function LandingPage() {
         {/* Member / Customer Card */}
         <Link
           href="/member/login"
-          className="group relative bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-slate-100 flex flex-col items-center text-center hover:-translate-y-1"
+          className="group relative bg-white p-8 rounded-2xl shadow-md transition-all duration-300 border border-slate-100 flex flex-col items-center text-center"
         >
           <div className="w-20 h-20 bg-rose-50 rounded-2xl flex items-center justify-center mb-6 text-rose-600 group-hover:bg-rose-600 group-hover:text-white transition-colors duration-300 shadow-sm">
             <Users className="w-10 h-10" />

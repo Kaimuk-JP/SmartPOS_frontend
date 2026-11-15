@@ -175,7 +175,7 @@ export default function NewsPage() {
                 </div>
                 <button
                     onClick={handleOpenCreate}
-                    className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2.5 rounded-xl font-bold flex items-center gap-2 shadow-lg shadow-indigo-200 transition-all active:scale-95 text-sm sm:text-base"
+                    className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2.5 rounded-xl font-bold flex items-center gap-2 shadow-sm transition-all active:scale-95 text-sm sm:text-base"
                 >
                     <Plus className="w-5 h-5" />
                     เขียนประกาศใหม่
@@ -323,7 +323,7 @@ export default function NewsPage() {
                                         onClick={() => setCurrentPage(page as number)}
                                         disabled={isLoading}
                                         className={`w-9 h-9 flex items-center justify-center rounded-xl font-bold text-sm transition-all ${currentPage === page
-                                                ? 'bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-lg shadow-indigo-200'
+                                                ? 'bg-indigo-600 text-white shadow-sm'
                                                 : 'border border-slate-200 bg-white text-slate-600 hover:border-indigo-200 hover:bg-indigo-50'
                                             }`}
                                     >
@@ -346,7 +346,7 @@ export default function NewsPage() {
 
             {isModalOpen && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in">
-                    <div className="bg-white rounded-2xl w-full max-w-lg shadow-2xl overflow-hidden animate-in zoom-in-95">
+                    <div className="bg-white rounded-2xl w-full max-w-lg shadow-lg overflow-hidden animate-in zoom-in-95">
                         <div className="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
                             <h3 className="text-xl font-bold text-slate-800">{editingId ? 'แก้ไขประกาศ' : 'เขียนประกาศใหม่'}</h3>
                             <button onClick={() => setIsModalOpen(false)} className="p-2 hover:bg-slate-200 rounded-full transition-colors">
@@ -462,7 +462,7 @@ export default function NewsPage() {
                                 <button
                                     type="submit"
                                     disabled={isUploading}
-                                    className="flex-1 py-3 bg-indigo-600 hover:bg-indigo-700 disabled:bg-slate-300 text-white font-bold rounded-xl shadow-lg shadow-indigo-200 transition-colors flex items-center justify-center gap-2"
+                                    className="flex-1 py-3 bg-indigo-600 hover:bg-indigo-700 disabled:bg-slate-300 text-white font-bold rounded-xl shadow-sm transition-colors flex items-center justify-center gap-2"
                                 >
                                     {isUploading ? (
                                         <>

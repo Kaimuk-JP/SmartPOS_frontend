@@ -102,7 +102,7 @@ export default function CustomerPage() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-100 via-slate-50 to-indigo-50 p-4 md:p-6">
+        <div className="min-h-screen bg-slate-50 p-4 md:p-6">
             <div className="max-w-7xl mx-auto space-y-6">
                 <CustomerHeader
                     totalCustomers={total}
@@ -157,7 +157,7 @@ export default function CustomerPage() {
                                             key={page}
                                             onClick={() => setCurrentPage(page as number)}
                                             className={`w-10 h-10 flex items-center justify-center rounded-xl font-bold transition-all ${currentPage === page
-                                                    ? 'bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-lg shadow-indigo-200'
+                                                    ? 'bg-indigo-600 text-white shadow-sm'
                                                     : 'border border-gray-200 bg-white text-gray-700 hover:border-indigo-200 hover:bg-indigo-50'
                                                 }`}
                                         >

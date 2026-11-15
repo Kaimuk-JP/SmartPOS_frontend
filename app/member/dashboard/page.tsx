@@ -338,7 +338,7 @@ export default function MemberDashboardPage() {
                     <div className="flex items-center gap-3">
                         <button
                             onClick={handleLogout}
-                            className="text-slate-400 hover:text-red-500 p-2"
+                            className="text-slate-400 hover:text-red-500 p-2 min-w-10 min-h-10 inline-flex items-center justify-center"
                         >
                             <LogOut className="w-5 h-5" />
                         </button>

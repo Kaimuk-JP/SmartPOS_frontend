@@ -61,7 +61,7 @@ export default function RewardModal({ show, reward, onClose, onSave }: RewardMod
 
     return (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <div className="bg-white rounded-2xl w-full max-w-lg shadow-2xl animate-in zoom-in-95 duration-200 overflow-hidden flex flex-col max-h-[90vh]">
+            <div className="bg-white rounded-2xl w-full max-w-lg shadow-lg animate-in zoom-in-95 duration-200 overflow-hidden flex flex-col max-h-[90vh]">
                 {/* Header */}
                 <div className="px-6 py-5 border-b border-slate-100 flex items-center justify-between bg-white">
                     <div className="flex items-center gap-3">
@@ -138,7 +138,7 @@ export default function RewardModal({ show, reward, onClose, onSave }: RewardMod
                     <button
                         form="reward-form"
                         type="submit"
-                        className="flex-[2] py-3 px-4 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 flex items-center justify-center gap-2"
+                        className="flex-[2] py-3 px-4 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-all shadow-sm flex items-center justify-center gap-2"
                     >
                         <Save className="w-5 h-5" />
                         บันทึกข้อมูล

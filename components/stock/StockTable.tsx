@@ -190,7 +190,7 @@ export default function StockTable({
                                                 <td className="py-3 px-4 text-center">
                                                     <button
                                                         onClick={() => onAddStock(product)}
-                                                        className="px-3 py-1.5 bg-indigo-600 text-white text-xs font-medium rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-1 shadow-sm shadow-indigo-200"
+                                                        className="px-3 py-1.5 bg-indigo-600 text-white text-xs font-medium rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-1 shadow-sm shadow-indigo-600/20"
                                                     >
                                                         <Plus className="w-3 h-3" />
                                                         เพิ่มสต็อก
@@ -257,7 +257,7 @@ export default function StockTable({
                                     onClick={() => handlePageChange(page as number)}
                                     disabled={isLoading}
                                     className={`w-9 h-9 flex items-center justify-center rounded-xl font-bold text-sm transition-all ${currentPage === page
-                                        ? 'bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-lg shadow-indigo-200'
+                                        ? 'bg-indigo-600 text-white shadow-sm'
                                         : 'border border-slate-200 bg-white text-slate-600 hover:border-indigo-200 hover:bg-indigo-50'
                                         }`}
                                 >

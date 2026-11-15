@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Kanit } from "next/font/google";
+import { IBM_Plex_Sans_Thai } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
-const kanit = Kanit({
+const plexThai = IBM_Plex_Sans_Thai({
   weight: ["300", "400", "500", "600", "700"],
   subsets: ["thai", "latin"],
-  variable: "--font-kanit",
+  variable: "--font-plex-thai",
 });
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="th" suppressHydrationWarning>
       <body
-        className={`${kanit.variable} font-sans antialiased bg-gray-50 text-slate-800`}
+        className={`${plexThai.variable} font-sans antialiased bg-gray-50 text-slate-800`}
         suppressHydrationWarning
       >
         <Toaster position="top-right" />

@@ -10,14 +10,14 @@ interface TopSellingSectionProps {
 export default function TopSellingSection({ topSellingProducts, topSellingCategories, paymentStats }: TopSellingSectionProps) {
     const [topSellingViewType, setTopSellingViewType] = useState<"products" | "categories">("products");
 
-    const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7'];
+    const colors = ['#124238', '#167d60', '#47b58f', '#7dcfb0', '#b0e4cd'];
 
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
             {/* Top Selling Chart */}
-            <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl border border-white/20 overflow-hidden flex flex-col h-full">
-                <div className="p-4 sm:p-5 bg-gradient-to-r from-[#4a5bcc] to-[#5a4289] text-white flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+            <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-md border border-white/20 overflow-hidden flex flex-col h-full">
+                <div className="p-4 sm:p-5 bg-indigo-600 text-white flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
                     <div className="flex items-center gap-3">
                         <Trophy className="w-6 h-6 text-yellow-300" />
                         <div>
@@ -50,7 +50,7 @@ export default function TopSellingSection({ topSellingProducts, topSellingCatego
                                 const color = colors[index % colors.length];
 
                                 return (
-                                    <div key={index} className="bg-gray-50 rounded-xl p-3 sm:p-4 relative overflow-hidden group hover:shadow-md transition-all border-l-4" style={{ borderLeftColor: color }}>
+                                    <div key={index} className="bg-gray-50 rounded-xl p-3 sm:p-4 relative overflow-hidden group transition-all border-l-4" style={{ borderLeftColor: color }}>
                                         <div className="flex justify-between items-center relative z-10">
                                             <div>
                                                 <h6 className="font-bold text-gray-800 text-base sm:text-lg mb-1">{itemName}</h6>
@@ -70,8 +70,8 @@ export default function TopSellingSection({ topSellingProducts, topSellingCatego
             </div>
 
             {/* Payment Methods */}
-            <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl border border-white/20 overflow-hidden flex flex-col h-full">
-                <div className="p-4 sm:p-5 bg-gradient-to-r from-[#4a5bcc] to-[#5a4289] text-white flex items-center gap-3">
+            <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-md border border-white/20 overflow-hidden flex flex-col h-full">
+                <div className="p-4 sm:p-5 bg-indigo-600 text-white flex items-center gap-3">
                     <div className="bg-white/20 p-2 rounded-full text-white">
                         <CreditCard className="w-6 h-6" />
                     </div>

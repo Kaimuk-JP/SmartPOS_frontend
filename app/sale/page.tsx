@@ -141,7 +141,8 @@ export default function SalePage() {
         return products.filter((p) => {
             const matchesSearch = p.name.toLowerCase().includes(search.toLowerCase()) || (p.barcode && p.barcode.includes(search));
             const matchesCategory =
-                activeCategory === "ทั้งหมด" || p.category === activeCategory;
+                activeCategory === "ทั้งหมด" ||
+                (typeof p.category === "object" ? p.category?.name : p.category) === activeCategory;
             return matchesSearch && matchesCategory;
         });
     }, [search, activeCategory, products]);
@@ -476,6 +477,9 @@ export default function SalePage() {
                 setSearch={setSearch}
                 addToCart={addToCart}
                 cart={cart}
+                categories={categories}
+                activeCategory={activeCategory}
+                setActiveCategory={setActiveCategory}
             />
 
             {/* Cart Section Component - Hidden on mobile, shown as sidebar on desktop */}
@@ -508,7 +512,7 @@ export default function SalePage() {
             {cart.length > 0 && (
                 <button
                     onClick={() => setShowMobileCart(true)}
-                    className="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 bg-indigo-600 text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-3 z-50 hover:bg-indigo-700 transition-all active:scale-95"
+                    className="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 bg-indigo-600 text-white px-6 py-4 rounded-2xl shadow-lg flex items-center gap-3 z-50 hover:bg-indigo-700 transition-all active:scale-95"
                 >
                     <div className="flex items-center gap-2">
                         <div className="bg-white text-indigo-600 w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">

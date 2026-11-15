@@ -139,7 +139,7 @@ export default function CouponsPage() {
                 </div>
                 <button
                     onClick={handleOpenCreate}
-                    className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2.5 rounded-xl font-bold flex items-center gap-2 shadow-lg shadow-indigo-200 transition-all active:scale-95 text-sm sm:text-base"
+                    className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2.5 rounded-xl font-bold flex items-center gap-2 shadow-sm transition-all active:scale-95 text-sm sm:text-base"
                 >
                     <Plus className="w-5 h-5" />
                     สร้างคูปองใหม่
@@ -181,7 +181,7 @@ export default function CouponsPage() {
             {/* Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {coupons.map((coupon) => (
-                    <div key={coupon.id} className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden group hover:shadow-md transition-shadow">
+                    <div key={coupon.id} className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden group transition-shadow">
                         <div className="h-3 bg-gradient-to-r from-amber-400 to-orange-500" />
                         <div className="p-5">
                             <div className="flex justify-between items-start mb-4">
@@ -244,12 +244,12 @@ export default function CouponsPage() {
                                 .map((page, idx, arr) => (
                                     <div key={page} className="flex items-center gap-1.5">
                                         {idx > 0 && arr[idx - 1] !== page - 1 && (
-                                            <span className="text-slate-300 font-black px-1 select-none">...</span>
+                                            <span className="text-slate-300 font-bold px-1 select-none">...</span>
                                         )}
                                         <button
                                             onClick={() => setCurrentPage(page)}
                                             className={`w-9 h-9 rounded-xl font-bold transition-all duration-300 ${currentPage === page
-                                                ? "bg-indigo-600 text-white shadow-lg shadow-indigo-200 ring-4 ring-indigo-50"
+                                                ? "bg-indigo-600 text-white shadow-sm ring-4 ring-indigo-50"
                                                 : "bg-white border border-slate-200 text-slate-600 hover:border-indigo-200 hover:text-indigo-600 hover:bg-indigo-50 shadow-sm active:scale-95"
                                                 }`}
                                         >
@@ -273,7 +273,7 @@ export default function CouponsPage() {
             {/* Create/Edit Modal */}
             {isModalOpen && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in">
-                    <div className="bg-white rounded-2xl w-full max-w-lg shadow-2xl overflow-hidden animate-in zoom-in-95">
+                    <div className="bg-white rounded-2xl w-full max-w-lg shadow-lg overflow-hidden animate-in zoom-in-95">
                         <div className="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
                             <h3 className="text-xl font-bold text-slate-800">{editingId ? 'แก้ไขคูปอง' : 'สร้างคูปองใหม่'}</h3>
                         </div>
@@ -357,7 +357,7 @@ export default function CouponsPage() {
                                 </button>
                                 <button
                                     type="submit"
-                                    className="flex-1 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl shadow-lg shadow-indigo-200 transition-colors flex items-center justify-center gap-2"
+                                    className="flex-1 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl shadow-sm transition-colors flex items-center justify-center gap-2"
                                     disabled={isSaving}
                                 >
                                     {isSaving && <Loader2 className="w-4 h-4 animate-spin" />}

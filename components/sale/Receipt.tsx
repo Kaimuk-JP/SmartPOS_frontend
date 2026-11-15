@@ -11,7 +11,7 @@ export const Receipt = React.forwardRef<HTMLDivElement, ReceiptProps>(
     if (!bill) return null;
 
     return (
-      <div ref={ref} className="p-2 bg-white text-black font-mono text-[10px] w-[55mm] mx-auto leading-tight">
+      <div ref={ref} className="p-2 bg-white text-black font-mono text-xs w-[55mm] mx-auto leading-tight">
         <div className="text-center mb-3">
           <h2 className="text-base font-bold">Smart POS</h2>
           <p className="font-bold mt-1">ใบเสร็จรับเงิน</p>

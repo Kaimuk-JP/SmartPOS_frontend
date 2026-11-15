@@ -204,12 +204,12 @@ export default function AdminProductTable({
                                 .map((page, idx, arr) => (
                                     <div key={page} className="flex items-center gap-1.5">
                                         {idx > 0 && arr[idx - 1] !== page - 1 && (
-                                            <span className="text-slate-300 font-black px-1 select-none">...</span>
+                                            <span className="text-slate-300 font-bold px-1 select-none">...</span>
                                         )}
                                         <button
                                             onClick={() => setCurrentPage(page)}
                                             className={`w-9 h-9 rounded-xl font-bold transition-all duration-300 ${currentPage === page
-                                                ? "bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-lg shadow-indigo-200 ring-4 ring-indigo-50"
+                                                ? "bg-indigo-600 text-white shadow-sm ring-4 ring-indigo-50"
                                                 : "bg-white border border-slate-200 text-slate-600 hover:border-indigo-200 hover:text-indigo-600 hover:bg-indigo-50 shadow-sm active:scale-95"
                                                 }`}
                                         >

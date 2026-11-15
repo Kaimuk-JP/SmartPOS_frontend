@@ -24,7 +24,7 @@ export default function RewardList({ rewards, selectedCustomer, onRedeem, onEdit
                 const notEnoughPoints = selectedCustomer && selectedCustomer.points < pointsCost;
 
                 return (
-                    <div key={reward.id} className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow group relative">
+                    <div key={reward.id} className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden flex flex-col transition-shadow group relative">
                         {/* Status Badge */}
                         {isOutOfStock && (
                             <div className="absolute top-3 right-3 px-2 py-1 bg-slate-100 text-slate-500 text-xs font-bold rounded-lg border border-slate-200">
@@ -61,7 +61,7 @@ export default function RewardList({ rewards, selectedCustomer, onRedeem, onEdit
                                     onClick={() => canRedeem && onRedeem(reward)}
                                     disabled={!canRedeem}
                                     className={`flex-1 flex items-center justify-center gap-2 py-2 rounded-xl text-sm font-bold transition-all ${canRedeem
-                                        ? 'bg-indigo-600 text-white hover:bg-indigo-700 shadow-md shadow-indigo-200'
+                                        ? 'bg-indigo-600 text-white hover:bg-indigo-700 shadow-sm'
                                         : 'bg-slate-200 text-slate-400 cursor-not-allowed'
                                         }`}
                                 >

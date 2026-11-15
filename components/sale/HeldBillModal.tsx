@@ -31,7 +31,7 @@ export default function HeldBillModal({
 
     return (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <div className="bg-white rounded-2xl w-full max-w-md overflow-hidden shadow-2xl animate-in zoom-in-95 duration-200 flex flex-col max-h-[80vh]">
+            <div className="bg-white rounded-2xl w-full max-w-md overflow-hidden shadow-lg animate-in zoom-in-95 duration-200 flex flex-col max-h-[80vh]">
                 <div className="p-4 border-b border-slate-100 flex justify-between items-center bg-slate-50">
                     <h3 className="font-bold text-lg text-slate-700 flex items-center gap-2">
                         <Clock className="w-5 h-5 text-indigo-600" />
@@ -59,7 +59,7 @@ export default function HeldBillModal({
                                             <p className="font-bold text-slate-800 text-lg">
                                                 ฿{bill.total.toLocaleString()}
                                             </p>
-                                            <span className="text-[10px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded">#{bill.id}</span>
+                                            <span className="text-xs bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded">#{bill.id}</span>
                                         </div>
                                         <p className="text-xs text-slate-400">
                                             {new Date(bill.createdAt).toLocaleTimeString("th-TH", {

@@ -23,7 +23,7 @@ export default function CustomerSelector({ customers, selectedCustomer, onSelect
 
     if (selectedCustomer) {
         return (
-            <div className="bg-indigo-600 rounded-2xl p-6 text-white shadow-xl shadow-indigo-200 animate-in fade-in slide-in-from-top-4 relative overflow-hidden">
+            <div className="bg-indigo-600 rounded-2xl p-6 text-white shadow-sm animate-in fade-in slide-in-from-top-4 relative overflow-hidden">
                 <div className="absolute top-0 right-0 p-3 opacity-10">
                     <Star className="w-32 h-32 transform rotate-12 translate-x-8 -translate-y-8" />
                 </div>
@@ -92,7 +92,7 @@ export default function CustomerSelector({ customers, selectedCustomer, onSelect
 
                 {/* Search Results Dropdown */}
                 {showResults && searchTerm && (
-                    <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-xl border border-slate-100 overflow-hidden z-50">
+                    <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden z-50">
                         {filteredCustomers.length > 0 ? (
                             <div className="divide-y divide-slate-50">
                                 {filteredCustomers.map(customer => (

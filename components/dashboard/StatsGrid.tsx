@@ -15,8 +15,8 @@ export default function StatsGrid({ todaySales, dailyViewMode }: StatsGridProps)
             secondaryText: isToday
                 ? `เมื่อวาน: ${(todaySales.yesterdayTotal || 0).toLocaleString()} บาท`
                 : `วันนี้: ${(todaySales.totalAmount || 0).toLocaleString()} บาท`,
-            icon: <Coins className="w-10 h-10 text-white drop-shadow-md" />,
-            gradient: "from-[#4a5bcc] to-[#5a4289]",
+            icon: <Coins className="w-6 h-6" />,
+            tone: "bg-indigo-50 text-indigo-700",
         },
         {
             title: isToday ? "จำนวนบิลวันนี้" : "จำนวนบิลเมื่อวาน",
@@ -25,8 +25,8 @@ export default function StatsGrid({ todaySales, dailyViewMode }: StatsGridProps)
             secondaryText: isToday
                 ? `เมื่อวาน: ${todaySales.yesterdayBillCount || 0} บิล`
                 : `วันนี้: ${todaySales.billCount || 0} บิล`,
-            icon: <Receipt className="w-10 h-10 text-white drop-shadow-md" />,
-            gradient: "from-[#2d6e3e] to-[#26a69a]",
+            icon: <Receipt className="w-6 h-6" />,
+            tone: "bg-indigo-50 text-indigo-700",
         },
         {
             title: isToday ? "ค่าเฉลี่ยต่อบิลวันนี้" : "ค่าเฉลี่ยต่อบิลเมื่อวาน",
@@ -34,27 +34,29 @@ export default function StatsGrid({ todaySales, dailyViewMode }: StatsGridProps)
             secondaryText: isToday
                 ? `เมื่อวาน: ${(todaySales.yesterdayAveragePerBill || 0).toLocaleString()} บาท`
                 : `วันนี้: ${(todaySales.averagePerBill || 0).toLocaleString()} บาท`,
-            icon: <Calculator className="w-10 h-10 text-white drop-shadow-md" />,
-            gradient: "from-[#c72e6a] to-[#d4a347]",
+            icon: <Calculator className="w-6 h-6" />,
+            tone: "bg-indigo-50 text-indigo-700",
         },
     ];
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             {cards.map((card, index) => (
                 <div
                     key={index}
-                    className={`rounded-2xl p-4 sm:p-6 text-white text-center shadow-lg transform transition-transform hover:-translate-y-1 bg-gradient-to-br ${card.gradient}`}
+                    className="rounded-2xl bg-white border border-slate-200 p-5 sm:p-6 shadow-sm"
                 >
-                    <div className="w-14 h-14 sm:w-20 sm:h-20 mx-auto bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-3 sm:mb-4 shadow-inner">
-                        {card.icon}
+                    <div className="flex items-center gap-3 mb-4">
+                        <div className={`w-11 h-11 rounded-xl flex items-center justify-center ${card.tone}`}>
+                            {card.icon}
+                        </div>
+                        <h3 className="text-base font-medium text-slate-600">{card.title}</h3>
                     </div>
-                    <h3 className="text-lg font-medium opacity-90 mb-1">{card.title}</h3>
-                    <div className="text-2xl sm:text-3xl font-bold mb-1 shadow-black/10 drop-shadow-sm">
+                    <div className="text-3xl sm:text-4xl font-semibold text-slate-900 tracking-tight">
                         {typeof card.value === 'number' ? card.value.toLocaleString() : card.value}
-                        {card.unit ? <span className="text-lg ml-2 font-normal">{card.unit}</span> : <span className="text-lg ml-2 font-normal">บาท</span>}
+                        <span className="text-base ml-2 font-normal text-slate-500">{card.unit ?? "บาท"}</span>
                     </div>
-                    <div className="text-sm bg-white/20 inline-block px-3 py-1 rounded-lg mt-3 backdrop-blur-sm">
+                    <div className="text-sm text-slate-500 mt-3 pt-3 border-t border-slate-100">
                         {card.secondaryText}
                     </div>
                 </div>

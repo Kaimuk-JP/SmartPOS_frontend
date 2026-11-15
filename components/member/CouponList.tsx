@@ -72,7 +72,7 @@ export default function CouponList({ coupons }: CouponListProps) {
                 {paginatedCoupons.length > 0 ? paginatedCoupons.map((coupon) => (
                     <div
                         key={coupon.id}
-                        className={`bg-white rounded-2xl border flex overflow-hidden relative group ${filter === 'active' ? 'border-indigo-100 shadow-sm hover:shadow-md hover:border-indigo-300' : 'border-slate-100 opacity-70 grayscale'
+                        className={`bg-white rounded-2xl border flex overflow-hidden relative group ${filter === 'active' ? 'border-indigo-100 shadow-sm hover:border-indigo-300' : 'border-slate-100 opacity-70 grayscale'
                             }`}
                     >
                         {/* Left Side (Image) */}

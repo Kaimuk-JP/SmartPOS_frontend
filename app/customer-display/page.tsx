@@ -288,7 +288,7 @@ export default function CustomerDisplayPage() {
         <div className="min-h-screen bg-slate-50 flex">
             {/* Left: Cart Items */}
             <div className="flex-1 p-6 flex flex-col h-screen overflow-hidden">
-                <div className="bg-white rounded-3xl shadow-lg border border-slate-100 flex-1 flex flex-col overflow-hidden">
+                <div className="bg-white rounded-2xl shadow-lg border border-slate-100 flex-1 flex flex-col overflow-hidden">
                     <div className="p-6 bg-slate-900 text-white">
                         <h2 className="text-2xl font-bold flex items-center gap-3">
                             <ShoppingCart className="w-6 h-6" />
@@ -304,7 +304,7 @@ export default function CustomerDisplayPage() {
                             </div>
                         ) : (
                             cart.map((item, index) => (
-                                <div key={index} className="flex gap-5 p-5 bg-white rounded-2xl border border-slate-100 items-center shadow-sm hover:shadow-md transition-shadow">
+                                <div key={index} className="flex gap-5 p-5 bg-white rounded-2xl border border-slate-100 items-center shadow-sm transition-shadow">
                                     <div className="w-24 h-24 bg-slate-100 rounded-2xl overflow-hidden shrink-0 border border-slate-50">
                                         <img
                                             src={item.image || "https://images.unsplash.com/photo-1595433707802-6b2626ef1c91?w=200"}
@@ -316,7 +316,7 @@ export default function CustomerDisplayPage() {
                                         <div className="text-2xl font-bold text-slate-800 leading-tight mb-1">{item.name}</div>
                                         <div className="text-slate-500 text-lg font-medium">฿{item.price.toLocaleString()} x {item.qty}</div>
                                     </div>
-                                    <div className="text-3xl font-black text-indigo-600 tracking-tight">
+                                    <div className="text-3xl font-bold text-indigo-600 tracking-tight">
                                         ฿{(item.price * item.qty).toLocaleString()}
                                     </div>
                                 </div>
@@ -351,17 +351,17 @@ export default function CustomerDisplayPage() {
 
             {/* Right: Payment / Status / Member */}
             <div className={`w-[480px] p-6 bg-slate-100 transition-all duration-500`}>
-                <div className="h-full bg-white rounded-3xl shadow-xl flex flex-col overflow-hidden border-2 border-indigo-100 relative">
+                <div className="h-full bg-white rounded-2xl shadow-md flex flex-col overflow-hidden border-2 border-indigo-100 relative">
                     {status === 'paying' ? (
                         <div className="flex-1 flex flex-col items-center justify-center p-8 text-center animate-in slide-in-from-right fade-in duration-500">
                             <h2 className="text-3xl font-bold text-slate-800 mb-2">กรุณาชำระเงิน</h2>
                             <p className="text-slate-500 text-lg mb-8">ยอดเงินที่ต้องชำระ</p>
-                            <div className="bg-indigo-600 text-white px-8 py-4 rounded-3xl text-5xl font-bold mb-12 shadow-lg shadow-indigo-300">
+                            <div className="bg-indigo-600 text-white px-8 py-4 rounded-2xl text-5xl font-bold mb-12 shadow-sm">
                                 ฿{total.toLocaleString()}
                             </div>
                             <div className="w-full space-y-4">
                                 {paymentMethod === 'PromptPay' && (
-                                    <div className="bg-white p-6 rounded-3xl border-2 border-slate-100 flex flex-col items-center gap-4">
+                                    <div className="bg-white p-6 rounded-2xl border-2 border-slate-100 flex flex-col items-center gap-4">
                                         <div className="w-64 h-64 bg-slate-900 rounded-2xl flex items-center justify-center text-white">
                                             <QrCode className="w-32 h-32" />
                                         </div>
@@ -369,7 +369,7 @@ export default function CustomerDisplayPage() {
                                     </div>
                                 )}
                                 {paymentMethod === 'cash' && (
-                                    <div className="bg-green-50 p-8 rounded-3xl border-2 border-green-100 flex flex-col items-center gap-4 text-green-700">
+                                    <div className="bg-green-50 p-8 rounded-2xl border-2 border-green-100 flex flex-col items-center gap-4 text-green-700">
                                         <Coins className="w-16 h-16" />
                                         <p className="font-bold text-2xl">รับเงินสด</p>
                                         <p>กรุณารอเงินทอน</p>
@@ -379,7 +379,7 @@ export default function CustomerDisplayPage() {
                         </div>
                     ) : status === 'success' ? (
                         <div className="flex-1 flex flex-col items-center justify-center p-8 text-center bg-green-500 text-white animate-in zoom-in fade-in duration-300">
-                            <div className="w-32 h-32 bg-white text-green-500 rounded-full flex items-center justify-center mb-8 shadow-xl">
+                            <div className="w-32 h-32 bg-white text-green-500 rounded-full flex items-center justify-center mb-8 shadow-md">
                                 <CheckCircle className="w-20 h-20" />
                             </div>
                             <h2 className="text-4xl font-bold mb-4">ขอบคุณค่ะ</h2>
@@ -418,7 +418,7 @@ export default function CustomerDisplayPage() {
                                         ))}
                                     </div>
 
-                                    <button onClick={searchMember} disabled={phoneInput.length < 10 || isSearching} className="w-full bg-indigo-600 text-white font-bold py-4 rounded-2xl mt-4 shadow-lg shadow-indigo-200 disabled:opacity-50 transition-all hover:bg-indigo-700 active:scale-95">
+                                    <button onClick={searchMember} disabled={phoneInput.length < 10 || isSearching} className="w-full bg-indigo-600 text-white font-bold py-4 rounded-2xl mt-4 shadow-sm disabled:opacity-50 transition-all hover:bg-indigo-700 active:scale-95">
                                         {isSearching ? "กำลังค้นหา..." : "ตรวจสอบข้อมูลสมาชิก"}
                                     </button>
                                 </div>
@@ -443,12 +443,12 @@ export default function CustomerDisplayPage() {
 
                                     {foundCustomer.points >= 1000 ? (
                                         <div className="w-full space-y-4">
-                                            <div className="p-6 bg-amber-50 rounded-3xl border-2 border-amber-100">
-                                                <p className="text-amber-800 font-bold">✨ คุณมีสิทธิ์ใช้แต้มลดราคา!</p>
+                                            <div className="p-6 bg-amber-50 rounded-2xl border-2 border-amber-100">
+                                                <p className="text-amber-800 font-bold">คุณมีสิทธิ์ใช้แต้มลดราคา!</p>
                                                 <p className="text-sm text-amber-600 mt-1">1,000 แต้ม = ลด 10 บาท</p>
                                             </div>
-                                            <button onClick={handleUsePoints} className={`w-full py-5 rounded-3xl font-bold text-xl transition-all shadow-lg active:scale-95 ${pointsToUse > 0 ? "bg-rose-500 text-white shadow-rose-200" : "bg-amber-500 text-white shadow-amber-200 hover:bg-amber-600"}`}>
-                                                {pointsToUse > 0 ? "❌ ยกเลิกการใช้แต้ม" : "🛒 กดเพื่อใช้แต้มลดราคา"}
+                                            <button onClick={handleUsePoints} className={`w-full py-5 rounded-2xl font-bold text-xl transition-all shadow-lg active:scale-95 ${pointsToUse > 0 ? "bg-rose-500 text-white shadow-rose-200" : "bg-amber-500 text-white shadow-amber-200 hover:bg-amber-600"}`}>
+                                                {pointsToUse > 0 ? "ยกเลิกการใช้แต้ม" : "กดเพื่อใช้แต้มลดราคา"}
                                             </button>
                                             {pointsToUse > 0 && (
                                                 <div className="animate-bounce mt-4 text-rose-500 font-bold text-lg">
@@ -457,7 +457,7 @@ export default function CustomerDisplayPage() {
                                             )}
                                         </div>
                                     ) : (
-                                        <div className="p-8 bg-slate-50 rounded-3xl border-2 border-slate-100 text-slate-500 w-full">
+                                        <div className="p-8 bg-slate-50 rounded-2xl border-2 border-slate-100 text-slate-500 w-full">
                                             <p className="font-medium">ยอดแต้มยังไม่ถึงกำหนดแลกส่วนลด</p>
                                             <p className="text-xs mt-2 text-slate-400">(ต้องการอย่างน้อย 1,000 แต้ม)</p>
                                         </div>

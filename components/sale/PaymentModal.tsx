@@ -138,7 +138,7 @@ export default function PaymentModal({
 
     return (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <div className="bg-white rounded-3xl w-full max-w-2xl overflow-hidden shadow-2xl animate-in zoom-in-95 duration-200 flex flex-col md:flex-row max-h-[90vh]">
+            <div className="bg-white rounded-2xl w-full max-w-2xl overflow-hidden shadow-lg animate-in zoom-in-95 duration-200 flex flex-col md:flex-row max-h-[90vh]">
                 {/* Summary Side */}
                 <div className="bg-indigo-600 text-white p-6 md:w-1/3 flex flex-col justify-between relative overflow-hidden">
                     <div className="absolute top-0 right-0 p-8 opacity-10 transform translate-x-1/2 -translate-y-1/4">
@@ -179,7 +179,7 @@ export default function PaymentModal({
                                             {pointsRedeemed > 0 ? `คืนแต้ม (ใช้ไป ${pointsRedeemed})` : 'ใช้แต้มลดราคา'}
                                         </button>
                                         {pointsRedeemed > 0 && (
-                                            <p className="text-[10px] text-indigo-100 mt-1 text-center">
+                                            <p className="text-xs text-indigo-100 mt-1 text-center">
                                                 ลดไป ฿{discountFromPoints.toLocaleString()}
                                             </p>
                                         )}
@@ -196,7 +196,7 @@ export default function PaymentModal({
                         <h3 className="font-bold text-xl text-slate-800">
                             เลือกวิธีชำระเงิน
                         </h3>
-                        <button onClick={onClose} className="p-2 hover:bg-slate-100 rounded-full transition-colors">
+                        <button onClick={onClose} className="p-2 min-w-10 min-h-10 inline-flex items-center justify-center hover:bg-slate-100 rounded-full transition-colors">
                             <X className="text-slate-400 hover:text-slate-600 w-5 h-5" />
                         </button>
                     </div>
@@ -335,7 +335,7 @@ export default function PaymentModal({
                     <button
                         onClick={() => onConfirm(pointsRedeemed, finalTotal, appliedCoupon ? couponCode : undefined)}
                         disabled={paymentMethod === "cash" && Number(cashReceived) < finalTotal}
-                        className="w-full bg-indigo-600 text-white font-bold py-4 rounded-xl mt-4 hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-indigo-200 transition-all active:scale-[0.98]"
+                        className="w-full bg-indigo-600 text-white font-bold py-4 rounded-xl mt-4 hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed shadow-sm transition-all active:scale-[0.98]"
                     >
                         ยืนยันการชำระเงิน
                     </button>

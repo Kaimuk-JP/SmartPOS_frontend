@@ -20,9 +20,9 @@ export default function RedeemModal({ show, reward, customer, onClose, onConfirm
 
     return (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200">
-            <div className="bg-white rounded-2xl w-full max-w-md shadow-2xl animate-in zoom-in-95 duration-200 overflow-hidden relative">
+            <div className="bg-white rounded-2xl w-full max-w-md shadow-lg animate-in zoom-in-95 duration-200 overflow-hidden relative">
                 {/* Decorative Background */}
-                <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-br from-indigo-500 to-purple-600"></div>
+                <div className="absolute top-0 inset-x-0 h-32 bg-indigo-600"></div>
 
                 <div className="relative pt-10 px-6 pb-6 text-center">
                     {/* Icon */}
@@ -64,7 +64,7 @@ export default function RedeemModal({ show, reward, customer, onClose, onConfirm
                         </button>
                         <button
                             onClick={onConfirm}
-                            className="flex-1 py-2.5 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200 flex items-center justify-center gap-2"
+                            className="flex-1 py-2.5 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-colors shadow-sm flex items-center justify-center gap-2"
                         >
                             <Check className="w-5 h-5" />
                             ยืนยันแลกเลย

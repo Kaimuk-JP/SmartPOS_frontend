@@ -26,7 +26,7 @@ export default function AdminStaffModal({
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-            <div className="bg-white rounded-3xl w-full max-w-md shadow-2xl animate-in zoom-in-95 duration-200">
+            <div className="bg-white rounded-2xl w-full max-w-md shadow-lg animate-in zoom-in-95 duration-200">
                 <div className="p-6 border-b border-slate-100 flex justify-between items-center">
                     <h3 className="text-xl font-bold text-slate-800">
                         {editingStaff ? "แก้ไขข้อมูลพนักงาน" : "เพิ่มพนักงานใหม่"}
@@ -87,7 +87,7 @@ export default function AdminStaffModal({
                     <button
                         type="submit"
                         disabled={saving}
-                        className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 rounded-xl mt-4 shadow-lg shadow-indigo-100 flex items-center justify-center gap-2 transition-all active:scale-95 disabled:opacity-70"
+                        className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 rounded-xl mt-4 shadow-sm flex items-center justify-center gap-2 transition-all active:scale-95 disabled:opacity-70"
                     >
                         {saving ? <Loader2 className="w-5 h-5 animate-spin" /> : "บันทึกข้อมูล"}
                     </button>

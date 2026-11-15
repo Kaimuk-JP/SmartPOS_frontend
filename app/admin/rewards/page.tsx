@@ -149,7 +149,7 @@ export default function AdminRewardsPage() {
                                     key={page}
                                     onClick={() => setCurrentPage(page as number)}
                                     className={`w-10 h-10 flex items-center justify-center rounded-xl font-semibold transition-all ${currentPage === page
-                                        ? 'bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-lg shadow-indigo-200'
+                                        ? 'bg-indigo-600 text-white shadow-sm'
                                         : 'border border-gray-200 bg-white hover:bg-gray-50 text-gray-700'
                                         }`}
                                 >

@@ -42,6 +42,7 @@ export default function SalesChart({
     month,
     setMonth,
 }: SalesChartProps) {
+    const chartFont = typeof document !== 'undefined' ? getComputedStyle(document.body).fontFamily : 'sans-serif';
     const options = {
         responsive: true,
         maintainAspectRatio: false,
@@ -52,25 +53,25 @@ export default function SalesChart({
                 labels: {
                     usePointStyle: true,
                     boxWidth: 8,
-                    font: { family: 'Kanit' }
+                    font: { family: chartFont }
                 }
             },
             tooltip: {
                 backgroundColor: 'rgba(0,0,0,0.8)',
                 padding: 12,
                 cornerRadius: 8,
-                titleFont: { family: 'Kanit' },
-                bodyFont: { family: 'Kanit' }
+                titleFont: { family: chartFont },
+                bodyFont: { family: chartFont }
             }
         },
         scales: {
             y: {
-                grid: { color: '#f3f4f6' },
-                ticks: { font: { family: 'Kanit' } }
+                grid: { color: '#eef1f0' },
+                ticks: { font: { family: chartFont } }
             },
             x: {
                 grid: { display: false },
-                ticks: { font: { family: 'Kanit' } }
+                ticks: { font: { family: chartFont } }
             }
         },
         interaction: {
@@ -91,7 +92,7 @@ export default function SalesChart({
     const arrYear = Array.from({ length: 5 }, (_, i) => new Date().getFullYear() - 4 + i).reverse();
 
     return (
-        <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl border border-white/20 p-4 sm:p-6">
+        <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-md border border-white/20 p-4 sm:p-6">
             <div className="flex flex-wrap justify-between items-center mb-6 gap-4">
                 <div>
                     <h5 className="text-lg font-bold text-gray-800 flex items-center gap-2">

@@ -18,7 +18,7 @@ export default function StockDetailModal({ show, type, stock, details, onClose }
 
     return (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <div className="bg-white rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-hidden shadow-2xl animate-in zoom-in-95 duration-200">
+            <div className="bg-white rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-hidden shadow-lg animate-in zoom-in-95 duration-200">
                 {/* Modal Header */}
                 <div className={`flex items-center justify-between p-6 ${isStockIn ? 'bg-green-50' : 'bg-red-50'}`}>
                     <h3 className="text-xl font-bold text-slate-800 flex items-center gap-3">
@@ -33,7 +33,7 @@ export default function StockDetailModal({ show, type, stock, details, onClose }
                     </h3>
                     <button
                         onClick={onClose}
-                        className="p-2 hover:bg-white/80 rounded-xl transition-colors"
+                        className="p-2 min-w-10 min-h-10 inline-flex items-center justify-center hover:bg-white/80 rounded-xl transition-colors"
                     >
                         <X className="w-5 h-5 text-slate-500" />
                     </button>
