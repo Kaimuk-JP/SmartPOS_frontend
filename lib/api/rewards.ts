@@ -1,3 +1,5 @@
+import { memberHeaders } from './customers';
+
 const rawApiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://smartpos-backend-7ee9.onrender.com/api';
 const BASE_URL = rawApiUrl.endsWith('/api') ? rawApiUrl : `${rawApiUrl}/api`;
 
@@ -181,7 +183,7 @@ export async function redeemReward(rewardId: number, customerId: number) {
 export async function getCustomerRedemptions(customerId: number) {
     const headers = getHeaders();
     const res = await fetch(`${BASE_URL}/rewards/redemptions/${customerId}`, {
-        headers,
+        headers: { ...headers, ...memberHeaders() },
         credentials: 'include',
     });
 

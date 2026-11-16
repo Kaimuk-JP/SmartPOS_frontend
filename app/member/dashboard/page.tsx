@@ -265,7 +265,7 @@ export default function MemberDashboardPage() {
             }
 
         } catch (e) {
-            localStorage.removeItem('customerData');
+            localStorage.removeItem('customerData'); localStorage.removeItem('member_token');
             router.push('/member/login');
         }
     }, [router]);
@@ -301,7 +301,7 @@ export default function MemberDashboardPage() {
 
     const handleLogout = () => {
         showConfirm("ต้องการออกจากระบบใช่หรือไม่?", () => {
-            localStorage.removeItem('customerData');
+            localStorage.removeItem('customerData'); localStorage.removeItem('member_token');
             toast.success("ออกจากระบบเรียบร้อย");
             router.push('/member/login');
         }, "ออกจากระบบ");

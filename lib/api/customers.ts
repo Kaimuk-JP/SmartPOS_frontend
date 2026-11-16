@@ -49,6 +49,12 @@ export async function getCustomers(params?: { limit?: number; offset?: number; s
     };
 }
 
+// โทเคนของสมาชิก (ได้ตอนล็อกอินสมาชิก) ใช้ดูข้อมูลของตัวเองเท่านั้น แยกจากโทเคนพนักงาน
+export function memberHeaders(): Record<string, string> {
+    const t = typeof window !== 'undefined' ? localStorage.getItem('member_token') : null;
+    return t ? { 'X-Member-Token': t } : {};
+}
+
 export async function lookupCustomerByPhone(phone: string): Promise<Customer | null> {
     const token = typeof window !== 'undefined' ? localStorage.getItem('access_token') : null;
     const headers: any = {};
@@ -77,7 +83,7 @@ export async function getCustomerById(id: number): Promise<Customer | null> {
 
     const res = await fetch(`${BASE_URL}/customers/${id}`, {
         credentials: 'include',
-        headers
+        headers: { ...headers, ...memberHeaders() }
     });
     if (!res.ok) return null;
     try {
@@ -121,7 +127,9 @@ export async function memberLogin(phone: string, birthday: string): Promise<Cust
         body: JSON.stringify({ phone, birthday }),
     });
     if (!res.ok) throw new Error('เข้าสู่ระบบไม่สำเร็จ');
-    return res.json();
+    const { memberToken, ...customer } = await res.json();
+    if (memberToken && typeof window !== 'undefined') localStorage.setItem('member_token', memberToken);
+    return customer as Customer;
 }
 
 export async function registerMember(data: { name: string; phone: string; birthday: string }): Promise<Customer> {

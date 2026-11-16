@@ -1,3 +1,5 @@
+import { memberHeaders } from './customers';
+
 const rawApiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://smartpos-backend-7ee9.onrender.com/api';
 const BASE_URL = rawApiUrl.endsWith('/api') ? rawApiUrl : `${rawApiUrl}/api`;
 
@@ -41,7 +43,7 @@ export async function getSalesByCustomer(customerId: number): Promise<{ data: an
 
     const res = await fetch(`${BASE_URL}/sales/customer/${customerId}`, {
         credentials: 'include',
-        headers
+        headers: { ...headers, ...memberHeaders() }
     });
     if (!res.ok) return { data: [], total: 0 };
     return res.json();
